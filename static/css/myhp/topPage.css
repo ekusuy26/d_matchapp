@@ -27,10 +27,10 @@
 }
 
 /* howToUse */
-.toppage-how-to-use-wrap{
+.topHowToUseWrap{
   padding: 10px 50px;
 }
-.toppage-how-to-use-box{
+.topHowToUseBox{
   background-color: #fafafa;
   display: flex;
   justify-content: space-around;
@@ -38,7 +38,7 @@
   margin: 0;
   padding: 0;
 }
-.toppage-how-to-use{
+.topHowToUse{
   width: 250px;
   margin: 50px 0;
   opacity : 0;
@@ -46,22 +46,22 @@
   transition: 2s;
 }
 
-.toppage-how-to-use-photo{
+.topHowToUsePhoto{
   width: 100%;
   height: 250px;
 }
 
-.toppage-how-to-use-text{
+.topHowToUsetext{
   background-color: #fafafa;
   height: 200px;
 }
 
-.how-to-use-headline{
+.topHowToUseHeadline{
   color: #00ECFF;
   font-size: 16px;
 }
 
-.how-to-use-no{
+.topHowToUseNo{
   background-color: #00ECFF;
   color: #fafafa;
   width: 30px;

@@ -1,6 +1,6 @@
 $(function(){
   function animation(){
-    $('.toppage-how-to-use').each(function(){
+    $('.topHowToUse').each(function(){
       //ターゲットの位置を取得
       var target = $(this).offset().top;
       //スクロール量を取得
