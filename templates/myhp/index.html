@@ -2,46 +2,7 @@
 {% block content %}
 
 <div class="myhpIndexWrap">
-  <!-- これあとでサイドバーに移植する -->
-  <div class="sideBarWrap">
-    <div class="registeredDog">
-      <p class="sideBarUserName">{{user.username}}さん</p>
-      {% if dog_flg == 0 %}
-      <a href="{% url 'dog' %}" class="">
-        <i class="fas fa-paw"></i>
-        犬を登録してください
-      </a>
-      {% else %}
-      <a href="#" class="registeredDogLink">
-        <img class="registeredDogImage" src="{{ user.dog.image.url }}">
-        <div class="registeredDogName">なまえ：{{ user.dog.dogname }}</div>
-        <div class="registeredDogDetail">
-          <div>{{ user.dog.sex }}</div>
-          <div>{{ user.dog.age }}さい</div>
-        </div>
-      </a>
-      <div class="dogEditBox">
-        <a href="#" class="sideBarLink"><i class="fas fa-edit"></i>編集する</a>
-        <a href="#" class="sideBarLink"><i class="fas fa-trash-alt"></i>削除する</a>
-      </div>
-      {% endif %}
-    </div>
-    <div class="sideBarNavBox">
-      <div class="sideBarHeadline"><i class="fas fa-thumbs-up"></i>いいね！</div>
-      <a href="#" class="sideBarLink">あいてからのいいね！</a>
-      <a href="#" class="sideBarLink">じぶんからのいいね！</a>
-    </div>
-    <div class="sideBarNavBox">
-      <div class="sideBarHeadline"><i class="fas fa-comments"></i>マッチング</div>
-      <a href="#" class="sideBarLink">メッセージ</a>
-    </div>
-    <div class="sideBarNavBox">
-      <div class="sideBarHeadline">合成</div>
-      <a href="#" class="sideBarLink">合成して遊ぶ</a>
-      <a href="#" class="sideBarLink">合成写真の一覧</a>
-    </div>
-  </div>
-  <!-- 移植はここまで -->
+  {% include "./sideBar.html" %}
   <div class="myhpIndexRight">
     {% block index %}
     <!-- content -->
