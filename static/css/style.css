@@ -1,4 +1,6 @@
 @import url("./cssreset.css");
+@import url("./myhp/index.css");
+@import url("./myhp/sideBar.css");
 @import url("./myhp/topPage.css");
 @import url("./shared/base.css");
 @import url("./shared/footer.css");

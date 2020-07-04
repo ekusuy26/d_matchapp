@@ -1,0 +1,6 @@
+.myhpIndexWrap{
+  display: flex;
+  text-align: center;
+  width: 70vw;
+  margin: 100px auto 5px;
+}
