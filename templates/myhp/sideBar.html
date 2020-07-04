@@ -2,7 +2,7 @@
   <div class="registeredDog">
     <p class="sideBarUserName">{{user.username}}さん</p>
     {% if dog_flg == 0 %}
-    <a href="#" class="sideBarLink">
+    <a href="{% url 'accounts:dogNew' %}" class="sideBarLink">
       <i class="fas fa-paw"></i>
       犬を登録してください
     </a>
