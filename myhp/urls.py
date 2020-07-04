@@ -5,4 +5,5 @@ app_name='myhp'
  
 urlpatterns = [
     path('', views.topPage, name='topPage'),
+    path('index/', views.index, name='index'),
 ]
