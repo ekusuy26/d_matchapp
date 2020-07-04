@@ -1,0 +1,5 @@
+.footer{
+  background-image: url("/static/images/footer.png");
+  background-size: contain;
+  height: 50px;
+}
