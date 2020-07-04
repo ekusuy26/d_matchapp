@@ -4,5 +4,5 @@ from . import views
 app_name='myhp'
  
 urlpatterns = [
-    path('', views.toppage, name='toppage'),
+    path('', views.topPage, name='topPage'),
 ]
