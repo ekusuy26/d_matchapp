@@ -1,0 +1,66 @@
+{% extends '../shared/base.html' %}
+{% block content %}
+
+<div class="top-login-wrap">
+  <div class="top-login-left">
+    <div class="top-login-left__dog-box">
+      <div class="">
+        {{user.username}}さん
+      </div>
+      {% if dog_flg == 0 %}
+      <a href="{% url 'dog' %}" class="">
+        <i class="fas fa-paw"></i>
+        犬を登録してください
+      </a>
+      {% else %}
+      <a href="#" class="toppage-user-link">
+        <img class="toppage-user-photo" src="{{ user.dog.image.url }}" style="height: 100px; width: 100px;">
+        <div class="" style="text-align: center;">なまえ：{{ user.dog.dogname }}</div>
+        <div class="" style="display: flex; justify-content: space-around;">
+          <div class="">{{ user.dog.sex }}</div>
+          <div class="">{{ user.dog.age }}さい</div>
+        </div>
+      </a>
+      <div class="dog-edit-wrap">
+        <a href="#" class="top-login__nav-link">
+          <i class="fas fa-edit"></i>編集する
+        </a>
+        <a href="#" class="top-login__nav-link">
+          <i class="fas fa-trash-alt"></i>削除する
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    <div class="top-login-left__nav-box">
+      <div class="top-login-left__nav-head"><i class="fas fa-thumbs-up"></i>いいね！</div>
+      <a href="#" class="top-login__nav-link">
+        あいてからのいいね！
+      </a>
+      <a href="#" class="top-login__nav-link">
+        じぶんからのいいね！
+      </a>
+    </div>
+    <div class="top-login-left__nav-box">
+      <div class="top-login-left__nav-head"><i class="fas fa-comments"></i>マッチング</div>
+      <a href="#" class="top-login__nav-link">
+        メッセージ
+      </a>
+    </div>
+    <div class="top-login-left__nav-box">
+      <div class="top-login-left__nav-head">合成</div>
+      <a href="#" class="top-login__nav-link">
+        合成して遊ぶ
+      </a>
+      <a href="#" class="top-login__nav-link">
+        合成写真の一覧
+      </a>
+    </div>
+  </div>
+  <div class="top-login-right">
+    {% block index %}
+    <!-- content -->
+    {% endblock %}
+  </div>
+</div>
+
+{% endblock content %}
