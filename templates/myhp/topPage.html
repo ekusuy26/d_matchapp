@@ -1,19 +1,75 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-<div class="">あああ</div>
-hogehoge
+
+<div class="toppage-back-ground-image-wrap">
+  <div class="toppage-introduction-box">
+    <div class="toppage-introduction">
+      D.matchAppはわんちゃんのためのマッチングアプリです。<br>
+      子犬は両親の血統によって様々な容姿の子が生まれます。<br>
+      マッチング前にイメージを確認してわんちゃんに理想のお相手を見つけてあげましょう。
+    </div>
+    <a class="login-link" href="#">ログインする</a>
+  </div>
+  <div class="toppage-back-ground-image"></div>
+</div>
+<div class="toppage-how-to-use-wrap">
+  <ul class="toppage-how-to-use-box">
+    <li class="toppage-how-to-use">
+      <img class="toppage-how-to-use-photo" src="/static/images/howto1.jpg">
+      <div class="toppage-how-to-use-text">
+        <p class="how-to-use-headline">
+          <span class="how-to-use-no">1</span>
+          理想の相手を探しましょう</p>
+        <p class="how-to-use-text">わんちゃんに理想のお相手を探してあげましょう。</p>
+      </div>
+    </li>
+    <li class="toppage-how-to-use">
+      <img class="toppage-how-to-use-photo" src="/static/images/howto1.jpg">
+      <div class="toppage-how-to-use-text">
+        <p class="how-to-use-headline">
+          <span class="how-to-use-no">2</span>
+          子犬の容姿をみてみましょう</p>
+        <p class="how-to-use-text">わんちゃんの写真を元に子犬のイメージを作成します。</p>
+      </div>
+    </li>
+    <li class="toppage-how-to-use">
+      <img class="toppage-how-to-use-photo" src="/static/images/howto2.jpg">
+      <div class="toppage-how-to-use-text">
+        <p class="how-to-use-headline">
+          <span class="how-to-use-no">3</span>
+          気に入ったお相手にいいねを送りましょう</p>
+        <p class="how-to-use-text">気になるお相手を見つけたら「いいね」を送りましょう。</p>
+      </div>
+    </li>
+    <li class="toppage-how-to-use">
+      <img class="toppage-how-to-use-photo" src="/static/images/howto3.jpg">
+      <div class="toppage-how-to-use-text">
+        <p class="how-to-use-headline">
+          <span class="how-to-use-no">4</span>
+          マッチングしたらメッセージを送りましょう</p>
+        <p class="how-to-use-text">お互いがいいねを押したらメッセージの交換ができる様になります。</p>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="toppage-user-wrap">
+  <div class="toppage-user-head">新着のお相手</div>
+  <div class="toppage-users">
+    {% for dog in dogs %}
+    <a href="{% url 'dogshow' pk=dog.id %}" class="toppage-user-link">
+      <div class="toppage-user">
+        <img class="toppage-user-photo" src="{{ dog.image.url }}">
+        <div class="toppage-user-explanation">
+          <div class="" style="text-align: center;">なまえ：{{ dog.dogname }}</div>
+          <div class="" style="display: flex; justify-content: space-around;">
+            <div class="">{{ dog.sex }}</div>
+            <div class="">{{ dog.age }}さい</div>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock content %}

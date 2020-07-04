@@ -3,7 +3,7 @@ __pycache__
 *.pyc
 *.pyo
 img
-local_settings.py
+settings.py
 .DS_Store
 
 #root起点に除外

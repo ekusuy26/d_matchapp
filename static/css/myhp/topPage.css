@@ -1,0 +1,136 @@
+/* topimage */
+.toppage-back-ground-image-wrap{
+  height: 650px;
+  display: flex;
+  padding: 0 50px;
+  margin-top: 100px;
+}
+
+.toppage-introduction-box{
+  background-color: #fafafa;
+  text-align: center;
+  padding: 30px;
+  width: 30%;
+}
+
+.toppage-introduction{
+  margin: 50px 0;
+  height: 70%;
+}
+.login-link {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 100px;
+  transition: .4s;
+  font-size: larger;
+}
+
+.login-link:hover {
+  background: #67c5ff;
+  color: #fafafa;
+}
+
+.toppage-back-ground-image{
+  background-image: url("/static/images/top-image.jpg");
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  background-size: cover;
+  width: 70%;
+}
+
+/* howToUse */
+.toppage-how-to-use-wrap{
+  padding: 10px 50px;
+}
+.toppage-how-to-use-box{
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.toppage-how-to-use{
+  width: 250px;
+  margin: 50px 0;
+  opacity : 0;
+  transform: translateY(20px);
+  transition: 2s;
+}
+
+.toppage-how-to-use-photo{
+  width: 100%;
+  height: 250px;
+}
+
+.toppage-how-to-use-text{
+  background-color: #fafafa;
+  height: 200px;
+}
+
+.how-to-use-headline{
+  color: #00ECFF;
+  font-size: 16px;
+}
+
+.how-to-use-no{
+  background-color: #00ECFF;
+  color: #fafafa;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+}
+
+/* userlist */
+.toppage-user-wrap{
+  padding: 0 50px 10px;
+}
+
+.toppage-user-head{
+  background-color: #fafafa;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.toppage-users{
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 100px;
+}
+
+.toppage-user-link{
+  text-decoration: none;
+  color: #333333;
+}
+
+.toppage-user {
+  transition: all 0.6s ease 0s;
+}
+.toppage-user:hover {
+  cursor: pointer;
+  transform: scale(1.2, 1.2);
+}
+
+.toppage-user-photo{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+}
+
+.dog-edit-wrap{
+  display: flex;
+  justify-content: space-around;
+}
+
+.toppage-user-explanation{
+  width: 150px;
+  height: 50px;
+  margin-top: 5px;
+}
