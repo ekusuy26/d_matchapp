@@ -1,0 +1,32 @@
+{% extends '../shared/base.html' %}
+{% block content %}
+
+<div class="dog-wrap">
+  <div class="dog-details-box">
+    <div class="dog-show-like-box">
+      <i class="fas fa-thumbs-up"></i>
+      {{dog.like_num}}
+      いいね！
+    </div>
+    <div class="dog-details">
+      飼い主：{{dog.user.username}}<br>
+      名前：{{dog.dogname}}<br>
+      年齢：{{dog.age}}<br>
+      性別：{{dog.sex}}<br>
+      紹介文：{{dog.introduction}}
+    </div>
+  </div>
+  <div class="dog-show-right">
+    <div class="picture-frame">
+      <img class="dog-show-image" src="{{ dog.image.url }}">
+    </div>
+    {% if like_flg == 0 %}
+    <a href="#" class="dog-show-link">いいねボタン</a>
+    {% else %}
+    <a href="#" class="dog-show-link">いいねを外す</a>
+    {% endif %}
+    <a href="#" class="dog-show-link">合成ボタン</a>
+  </div>
+</div>
+
+{% endblock content %}

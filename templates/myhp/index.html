@@ -7,7 +7,7 @@
   </div>
   <div class="allUsers">
     {% for obj in objs %}
-    <a href="#" class="userBox">
+    <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox">
       <img class="userImage" src="{{ obj.image.url }}">
       <div class="userName">なまえ：{{ obj.dogname }}</div>
       <div class="userInfo">
