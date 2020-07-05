@@ -29,11 +29,9 @@
     </div>
     {% endif %}
   </div>
-  <div class="myhpWrap">
-    {% block content %}
-    <!-- content -->
-    {% endblock %}
-  </div>
+  {% block content %}
+  <!-- content -->
+  {% endblock %}
   {% include "./footer.html" %}
 </body>
 

@@ -1,21 +1,23 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-{% include "./sideBar.html" %}
-<div class="myhpIndexRight">
-  <div class="headLine">
-    {{headLine}}
-  </div>
-  <div class="allUsers">
-    {% for obj in objs %}
-    <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox">
-      <img class="userImage" src="{{ obj.image.url }}">
-      <div class="userName">なまえ：{{ obj.dogname }}</div>
-      <div class="userInfo">
-        <div>{{ obj.sex }}</div>
-        <div>{{ obj.age }}さい</div>
-      </div>
-    </a>
-    {% endfor %}
+<div class="myhpWrap">
+  {% include "./sideBar.html" %}
+  <div class="myhpIndexRight">
+    <div class="headLine">
+      {{headLine}}
+    </div>
+    <div class="allUsers">
+      {% for obj in objs %}
+      <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox">
+        <img class="userImage" src="{{ obj.image.url }}">
+        <div class="userName">なまえ：{{ obj.dogname }}</div>
+        <div class="userInfo">
+          <div>{{ obj.sex }}</div>
+          <div>{{ obj.age }}さい</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock content %}

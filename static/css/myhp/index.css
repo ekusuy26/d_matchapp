@@ -1,3 +1,10 @@
+.myhpWrap{
+  display: flex;
+  text-align: center;
+  width: 70vw;
+  margin: 100px auto 10px;
+}
+
 .myhpIndexRight{
   background-color: #fafafa;
   min-height: calc(100vh - 200px);
