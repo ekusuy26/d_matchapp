@@ -31,7 +31,7 @@ def dogNew(request):
         if form.is_valid():
             print('dog_regist is_valid')
             form.save(request.POST)
-            return redirect('myhp:toppage')
+            return redirect('myhp:index')
         else:
             print('dog_regist false is_valid')
     template = loader.get_template('accounts/dogNew.html')
