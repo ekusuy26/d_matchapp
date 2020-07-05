@@ -41,6 +41,12 @@ def dogNew(request):
     }
     return HttpResponse(template.render(context, request))
 
+class DogUpdate(UpdateView):
+    template_name = 'accounts/dogNew.html'
+    model = Dog
+    fields = ['image', 'dogname', 'age', 'sex', 'introduction']
+    success_url = reverse_lazy('myhp:index')
+
 def dogDelete(request, pk):
     dog = Dog.objects.get(id=pk)
     dog.delete()
