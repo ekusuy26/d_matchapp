@@ -36,3 +36,10 @@
   background: #67c5ff;
   color: #fafafa;
 }
+
+.myhpWrap{
+  display: flex;
+  text-align: center;
+  width: 70vw;
+  margin: 100px auto 10px;
+}

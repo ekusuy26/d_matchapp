@@ -7,6 +7,7 @@ def topPage(request):
     return render(request, 'myhp/topPage.html', {})
 
 def index(request):
+    headLine = 'ユーザー一覧'
     objs = Dog.objects.order_by('-id')
     dog = Dog.objects.filter(user_id=request.user.id)
     if dog.count() == 0:
@@ -14,6 +15,7 @@ def index(request):
     else:
         dog_flg = 1
     return render(request, 'myhp/index.html', {
+        'headLine': headLine,
         'objs': objs,
         'dog_flg': dog_flg,
     })

@@ -1,13 +1,26 @@
 {% extends '../shared/base.html' %}
 {% block content %}
 
-<div class="myhpIndexWrap">
-  {% include "./sideBar.html" %}
-  <div class="myhpIndexRight">
-    {% block index %}
-    <!-- content -->
-    {% endblock %}
+
+{% include "./sideBar.html" %}
+<div class="myhpIndexRight">
+
+  <div class="headLine">
+    {{headLine}}
   </div>
+  <div class="allUsers">
+    {% for obj in objs %}
+    <a href="#" class="userBox">
+      <img class="userImage" src="{{ obj.image.url }}">
+      <div class="userName" style="text-align: center;">なまえ：{{ obj.dogname }}</div>
+      <div class="userInfo" style="display: flex; justify-content: space-around;">
+        <div>{{ obj.sex }}</div>
+        <div>{{ obj.age }}さい</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
 </div>
 
 {% endblock content %}

@@ -1,12 +1,54 @@
-.myhpIndexWrap{
-  display: flex;
-  text-align: center;
-  width: 70vw;
-  margin: 100px auto 10px;
-}
+
 
 .myhpIndexRight{
   background-color: #fafafa;
   min-height: calc(100vh - 200px);
   width: 75%;
+}
+
+.headLine {
+  background-color: #fafafa;
+  position: relative;
+  display: inline-block;
+  margin: 1em 0;
+  font-size: 16px;
+}
+.headLine:before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  display: inline-block;
+  width: 60px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #00FFFF;
+  border-radius: 2px;
+}
+
+.userBox {
+  transition: all 0.6s ease 0s;
+  margin: 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: #333333;
+}
+
+.userBox:hover {
+  cursor: pointer;
+  transform: scale(1.2, 1.2);
+}
+
+.userImage{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+}
+
+.allUsers{
+  padding: 30px 15px;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: flex-start;
 }
