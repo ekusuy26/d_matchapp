@@ -7,6 +7,7 @@ from django.urls import reverse_lazy, reverse
 from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
+from .models import Dog
 
 # Create your views here.
 
@@ -39,3 +40,8 @@ def dogNew(request):
         'form': form,
     }
     return HttpResponse(template.render(context, request))
+
+def dogDelete(request, pk):
+    dog = Dog.objects.get(id=pk)
+    dog.delete()
+    return redirect('myhp:index')

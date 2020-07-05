@@ -17,7 +17,7 @@
     </a>
     <div class="dogEditBox">
       <a href="#" class="sideBarLink"><i class="fas fa-edit"></i>編集する</a>
-      <a href="#" class="sideBarLink"><i class="fas fa-trash-alt"></i>削除する</a>
+      <a href="{% url 'accounts:dogDelete' pk=user.dog.id %}" class="sideBarLink"><i class="fas fa-trash-alt"></i>削除する</a>
     </div>
     {% endif %}
   </div>
