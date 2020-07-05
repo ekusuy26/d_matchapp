@@ -10,4 +10,5 @@ urlpatterns = [
     path('dogs/new/', views.dogNew,name="dogNew"),
     path('dogs/update/<int:pk>/', views.DogUpdate.as_view(),name="dogUpdate"),
     path('dogs/delete/<int:pk>/', views.dogDelete,name="dogDelete"),
+    path('dog/show/<int:pk>/', views.dogShow, name='dogshow'),
 ]

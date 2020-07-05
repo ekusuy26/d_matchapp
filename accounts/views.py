@@ -51,3 +51,9 @@ def dogDelete(request, pk):
     dog = Dog.objects.get(id=pk)
     dog.delete()
     return redirect('myhp:index')
+
+def dogShow(request, pk):
+    dog = Dog.objects.get(id = pk)
+    return render(request, 'accounts/dogShow.html', {
+        'dog': dog,
+        })
