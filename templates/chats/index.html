@@ -1,1 +1,33 @@
-hogehoge
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="myhpWrap">
+  {% include "../myhp/sideBar.html" %}
+  <div class="myhpIndexRight">
+
+    <div class="chatWrap">
+      <div class="chatGroup">
+        {% for crew in parties %}
+        {{crew.chat}}
+        <div class="crewLinkBox">
+          <a href="" class="crewLink">
+            {% for c in crew.users.all %}
+            {% if c.id != request.user.id %}
+            <img class="toppage-user-photo" src="{{ c.dog.image.url }}" style="height: 60px; width: 60px;">
+            <p class="chatUsername">{{c}}</p>
+            {% endif %}
+            {% endfor %}
+          </a>
+        </div>
+        {% endfor%}
+      </div>
+      {% block chatMessage %}
+      <div class="chatLogoWrap">
+        <div class="chatLogo">
+        </div>
+      </div>
+      {% endblock %}
+    </div>
+
+  </div>
+</div>
+{% endblock content %}

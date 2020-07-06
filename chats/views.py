@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from chats.models import Party
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'chats/index.html', {})
+    parties = Party.objects.filter(users=request.user.id)
+    return render(request, 'chats/index.html', {
+        'parties' : parties
+        })
