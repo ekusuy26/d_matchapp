@@ -8,6 +8,7 @@ from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
 from .models import Dog, Like
+from django.contrib.auth.models import Group, User
 
 # Create your views here.
 
@@ -75,6 +76,21 @@ def like(request, pk):
         dog = Dog.objects.get(id = pk)
         dog.like_num += 1
         dog.save()
+        # 相手が自分にいいねしているか確認
+        opponent_id = Dog.objects.get(id=pk).user.id
+        check = Like.objects.filter(user_id=opponent_id, dog_id=request.user.dog.id)
+        if check.count() == query.count():
+            try:
+                max_id = Group.objects.latest('id').id
+            except:
+                max_id = 0
+            groups_tbl = Group()
+            groups_tbl.name = 'group' + str(max_id + 1)
+            groups_tbl.save()
+            new_group = Group.objects.latest('id')
+            User.objects.get(id = request.user.id).groups.add(new_group)
+            User.objects.get(id = opponent_id).groups.add(new_group)
+            # return redirect('/chat/')
     else:
         # いいね外す処理
         query.delete()
