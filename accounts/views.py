@@ -9,6 +9,7 @@ from .forms import DogForm
 from django.http import HttpResponse
 from .models import Dog, Like
 from django.contrib.auth.models import Group, User
+from chats.models import Party
 
 # Create your views here.
 
@@ -81,16 +82,16 @@ def like(request, pk):
         check = Like.objects.filter(user_id=opponent_id, dog_id=request.user.dog.id)
         if check.count() == query.count():
             try:
-                max_id = Group.objects.latest('id').id
+                max_id = Party.objects.latest('id').id
             except:
                 max_id = 0
-            groups_tbl = Group()
-            groups_tbl.name = 'group' + str(max_id + 1)
-            groups_tbl.save()
-            new_group = Group.objects.latest('id')
-            User.objects.get(id = request.user.id).groups.add(new_group)
-            User.objects.get(id = opponent_id).groups.add(new_group)
-            # return redirect('/chat/')
+            parties_tbl = Party()
+            parties_tbl.name = 'group' + str(max_id + 1)
+            parties_tbl.save()
+            new_party = Party.objects.latest('id')
+            new_party.users.add(request.user)
+            new_party.users.add(opponent_id)
+            # return redirect('/chats/index/')
     else:
         # いいね外す処理
         query.delete()
