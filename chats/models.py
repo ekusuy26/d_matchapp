@@ -9,6 +9,6 @@ class Party(models.Model):
 
 class Chat(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    Party = models.ForeignKey(Party, on_delete=models.CASCADE)
+    party = models.ForeignKey(Party, on_delete=models.CASCADE)
     text = models.CharField(max_length=150)
     uploaded_at = models.DateTimeField(auto_now_add=True)
