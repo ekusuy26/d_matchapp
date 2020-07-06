@@ -15,21 +15,13 @@
         </p>
       </div>
       <div class="commentUser">
-        <div class="test">
-          <i class="fas fa-user-alt"></i>
-        </div>
-        <div class="test">
-          {{ chat.user.username}}
-        </div>
+        <img class="chatUserImage" src="{{ chat.user.dog.image.url }}" style="height: 30px; width: 30px;">
+        <p>{{ chat.user.username }}</p>
       </div>
       {% else %}
       <div class="theircommentUser">
-        <div class="test">
-          <i class="fas fa-user-alt"></i>
-        </div>
-        <div class="test">
-          {{ chat.user.username}}
-        </div>
+        <img class="chatUserImage" src="{{ chat.user.dog.image.url }}" style="height: 30px; width: 30px;">
+        <p>{{ chat.user.username }}</p>
       </div>
       <div class="theirComment">
         <p class="theirCommentText">
