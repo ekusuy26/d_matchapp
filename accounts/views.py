@@ -7,7 +7,7 @@ from django.urls import reverse_lazy, reverse
 from . import forms
 from .forms import DogForm
 from django.http import HttpResponse
-from .models import Dog
+from .models import Dog, Like
 
 # Create your views here.
 
@@ -54,6 +54,31 @@ def dogDelete(request, pk):
 
 def dogShow(request, pk):
     dog = Dog.objects.get(id = pk)
+    query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
+    if query.count() == 0:
+        like_flg = 0
+    else:
+        like_flg = 1
     return render(request, 'accounts/dogShow.html', {
         'dog': dog,
+        'like_flg': like_flg,
         })
+
+def like(request, pk):
+    query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
+    if query.count() == 0:
+        # いいねする処理
+        likes_tbl = Like()
+        likes_tbl.user_id = request.user.id
+        likes_tbl.dog_id = pk
+        likes_tbl.save()
+        dog = Dog.objects.get(id = pk)
+        dog.like_num += 1
+        dog.save()
+    else:
+        # いいね外す処理
+        query.delete()
+        dog = Dog.objects.get(id = pk)
+        dog.like_num -= 1
+        dog.save()
+    return redirect('/dog/show/' + str(pk))

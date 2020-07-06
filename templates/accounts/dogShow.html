@@ -19,9 +19,9 @@
       <div class="dogShowRight">
         <img class="dogShowImage" src="{{ dog.image.url }}">
         {% if like_flg == 0 %}
-        <a href="#" class="dogShowLink">いいねボタン</a>
+        <a href="{% url 'accounts:like' pk=dog.id %}" class="dogShowLink">いいねボタン</a>
         {% else %}
-        <a href="#" class="dogShowLink">いいねを外す</a>
+        <a href="{% url 'accounts:like' pk=dog.id %}" class="dogShowLink">いいねを外す</a>
         {% endif %}
         <a href="#" class="dogShowLink">合成ボタン</a>
       </div>

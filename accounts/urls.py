@@ -11,4 +11,5 @@ urlpatterns = [
     path('dogs/update/<int:pk>/', views.DogUpdate.as_view(),name="dogUpdate"),
     path('dogs/delete/<int:pk>/', views.dogDelete,name="dogDelete"),
     path('dog/show/<int:pk>/', views.dogShow, name='dogShow'),
+    path('like/<int:pk>/', views.like, name='like'),
 ]
