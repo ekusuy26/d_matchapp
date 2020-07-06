@@ -1,6 +1,47 @@
 {% extends './index.html' %}
 {% block chat %}
-<div class="chatMessages" style='background-color: red;'>あああ</div>
+<div class="chatMessagesWrap">
+
+  <div class="chatMessageMain">
+    {% for chat in chats %}
+    <div class="messageBox">
+      {% if chat.user.id == request.user.id %}
+      <div class="myComment">
+        <p class="myCommentText">
+          {{ chat.text}}
+          <a href="#" class="commentDeleteIcon">
+            <i class="fas fa-trash-alt" style="font-size: 9px;"></i>
+          </a>
+        </p>
+      </div>
+      <div class="commentUser">
+        <div class="test">
+          <i class="fas fa-user-alt"></i>
+        </div>
+        <div class="test">
+          {{ chat.user.username}}
+        </div>
+      </div>
+      {% else %}
+      <div class="theircommentUser">
+        <div class="test">
+          <i class="fas fa-user-alt"></i>
+        </div>
+        <div class="test">
+          {{ chat.user.username}}
+        </div>
+      </div>
+      <div class="theirComment">
+        <p class="theirCommentText">
+          {{ chat.text}}
+        </p>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor%}
+  </div>
+
+</div>
 
 <div class="chatMessageForm">
   <form id="new_message" action="" method="POST">

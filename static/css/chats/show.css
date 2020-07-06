@@ -1,0 +1,98 @@
+.chatMessagesWrap{
+  background-color: red;
+  height: calc(80% - 20px);
+  padding: 10px;
+}
+
+.chatMessageForm{
+  height: 20%;
+  background-color: blue;
+}
+
+.chatMessageMain{
+  background-color: green;
+  height: 100%;
+}
+
+.messageBox{
+  display: flex;
+  position: relative;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.commentUser{
+  margin: 5px 0;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.myComment {
+  margin: 5px 50px 5px auto;
+  position: relative;
+}
+
+.commentDeleteIcon{
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  color: #333333;
+}
+
+.myComment .myCommentText {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 150px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+}
+
+.myComment .myCommentText:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+.theircommentUser{
+  margin: 5px 0;
+  right: 0;
+  width: 50px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.theirComment {
+  margin: 5px 0;
+}
+.theirComment .theirCommentText {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 150px;
+  border-radius: 12px;
+  background: #fafafa;
+  font-size: 15px;
+}
+
+.theirComment .theirCommentText:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #fafafa;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}

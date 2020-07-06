@@ -17,11 +17,11 @@ def show(request, id):
     else:
         form = ChatForm(request.POST, request.FILES)
         form.instance.user_id = request.user.id
-        form.instance.crew_id = id
+        form.instance.party_id = id
         if form.is_valid():
             print('chat_regist is_valid')
             form.save(request.POST)
-            return redirect('/chats/' + str(id))
+            return redirect('/chats/show/' + str(id))
         else:
             print('chat_regist false is_valid')
 
