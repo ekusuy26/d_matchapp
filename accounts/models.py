@@ -11,3 +11,7 @@ class Dog(models.Model):
     introduction = models.CharField(max_length=255)
     image = models.ImageField(upload_to="dogs/")
     like_num = models.IntegerField(default=0)
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='like_user')
+    dog = models.ForeignKey(Dog, on_delete=models.CASCADE)
