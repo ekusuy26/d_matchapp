@@ -91,7 +91,7 @@ def like(request, pk):
             new_party = Party.objects.latest('id')
             new_party.users.add(request.user)
             new_party.users.add(opponent_id)
-            # return redirect('/chats/index/')
+            return redirect('/chats/index/')
     else:
         # いいね外す処理
         query.delete()
