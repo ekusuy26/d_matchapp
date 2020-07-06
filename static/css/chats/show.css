@@ -1,16 +1,18 @@
 .chatMessagesWrap{
-  background-color: red;
-  height: calc(80% - 20px);
-  padding: 10px;
+  background-color: rgba(51, 51, 51,0.4);
+  height: calc(80% - 8px);
+  padding: 3px;
 }
 
 .chatMessageForm{
   height: 20%;
-  background-color: blue;
+  border: solid 1px rgba(51, 51, 51,0.4);
 }
 
 .chatMessageMain{
-  background-color: green;
+  background-image: url("/static/images/chat-image.jpg");
+  background-color:rgba(255,255,255,0.6);
+  background-blend-mode:lighten;
   height: 100%;
 }
 
@@ -93,4 +95,26 @@
   border-right: 18px solid #fafafa;
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
+}
+
+#new_message{
+  height: 100%;
+  position: relative;
+}
+
+#id_text{
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.chatBtn{
+  position: absolute;
+  top: 13px;
+  right: 10px;
 }
