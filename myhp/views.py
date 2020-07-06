@@ -1,10 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from accounts.models import Dog
 
 # Create your views here.
 
 def topPage(request):
-    return render(request, 'myhp/topPage.html', {})
+    if request.user.is_authenticated:
+        return redirect('myhp:index')
+    else:
+        return render(request, 'myhp/topPage.html', {})
 
 def index(request):
     headLine = 'ユーザー一覧'
