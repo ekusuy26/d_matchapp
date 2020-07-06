@@ -9,6 +9,7 @@
   background-color: #fafafa;
   min-height: calc(100vh - 200px);
   width: 75%;
+  position: relative;
 }
 
 .headLine {
