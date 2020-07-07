@@ -1,0 +1,14 @@
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="myhpWrap">
+  {% include "../myhp/sideBar.html" %}
+  <div class="myhpIndexRight">
+    <div class="headLine">
+      {{headLine}}
+    </div>
+    {% block like %}
+    <!-- like -->
+    {% endblock %}
+  </div>
+</div>
+{% endblock content %}

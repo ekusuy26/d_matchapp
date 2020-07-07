@@ -23,8 +23,8 @@
   </div>
   <div class="sideBarNavBox">
     <div class="sideBarHeadline"><i class="fas fa-thumbs-up"></i>いいね！</div>
-    <a href="#" class="sideBarLink">あいてからのいいね！</a>
-    <a href="#" class="sideBarLink">じぶんからのいいね！</a>
+    <a href="{% url 'accounts:likedOpponent' %}" class="sideBarLink">あいてからのいいね！</a>
+    <a href="{% url 'accounts:likedPerson' %}" class="sideBarLink">じぶんからのいいね！</a>
   </div>
   <div class="sideBarNavBox">
     <div class="sideBarHeadline"><i class="fas fa-comments"></i>マッチング</div>
