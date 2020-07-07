@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from accounts.models import Dog
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -11,7 +12,10 @@ def topPage(request):
 
 def index(request):
     headLine = 'ユーザー一覧'
-    objs = Dog.objects.order_by('-id')
+    all_objs = Dog.objects.order_by('-id')
+    paginator = Paginator(all_objs, 12) # 1ページに12件表示
+    p = request.GET.get('p') # URLのパラメータから現在のページ番号を取得
+    objs = paginator.get_page(p) # 指定のページのDogを取得
     dog = Dog.objects.filter(user_id=request.user.id)
     if dog.count() == 0:
         dog_flg = 0

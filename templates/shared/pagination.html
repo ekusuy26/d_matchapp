@@ -1,0 +1,14 @@
+<div class="pager">
+  <!-- 前のページへのリンク -->
+  {% if objs.has_previous %}
+  <a href="?p={{ objs.previous_page_number }}">前へ</a>
+  {% endif %}
+  <!-- 現在のページ番号と全体のページ数 -->
+  <span>
+    {{ objs.number }} / {{ objs.paginator.num_pages }}
+  </span>
+  <!-- 次のページへのリンク -->
+  {% if objs.has_next %}
+  <a href="?p={{ objs.next_page_number }}">次へ</a>
+  {% endif %}
+</div>
