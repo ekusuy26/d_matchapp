@@ -6,9 +6,11 @@
     <div class="headLine">
       {{headLine}}
     </div>
+    {% for obj in objs %}
     {% block like %}
     <!-- like -->
     {% endblock %}
+    {% endfor %}
   </div>
 </div>
 {% endblock content %}

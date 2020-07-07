@@ -1,17 +1,17 @@
 {% extends './like.html' %}
 {% block like %}
-<a href="#" class="toppage-user-link">
-  <div class="like-box-nav">
-    <img class="like-image" src="{{ obj.user.dog.image.url }}">
-    <div class="like-text">
+<div class="likeWrap">
+  <a href="#" class="likeLink">
+    <img class="likeImage" src="{{ obj.user.dog.image.url }}">
+    <div class="likeText">
       {{obj.user.username}}さん<br>
       なまえ：{{obj.user.dog.dogname}}<br>
       {{obj.user.dog.age}}さい<br>
       性別：{{obj.user.dog.sex}}<br>
       紹介文：{{obj.user.dog.introduction}}<br>
     </div>
-  </div>
-</a>
-<a href="#" class="dog-show-link">いいねありがとうボタン</a>
+  </a>
+  <a href="#" class="likeThanksLink">いいねありがとうボタン</a>
+</div>
 
 {% endblock like %}
