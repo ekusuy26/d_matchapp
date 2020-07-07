@@ -1,6 +1,6 @@
 {% extends './like.html' %}
 {% block like %}
-<a href="#" class="likeLink">
+<a href="{% url 'accounts:dogShow' pk=obj.dog.id %}" class="likeLink">
   <img class="likeImage" src="{{ obj.dog.image.url }}">
   <div class="likeText">
     {{obj.dog.user.username}}さん<br>

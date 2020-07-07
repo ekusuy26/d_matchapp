@@ -7,7 +7,7 @@
       犬を登録してください
     </a>
     {% else %}
-    <a href="#" class="registeredDogLink">
+    <a href="{% url 'accounts:dogShow' pk=user.dog.id %}" class="registeredDogLink">
       <img class="registeredDogImage" src="{{ user.dog.image.url }}">
       <div class="registeredDogName">なまえ：{{ user.dog.dogname }}</div>
       <div class="registeredDogDetail">
