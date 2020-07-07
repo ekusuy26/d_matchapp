@@ -28,17 +28,5 @@ def index(request):
     })
 
 def fusion(request):
-    if request.method == 'POST':
-        form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
-            print('documents is_valid')
-            form.save()
-        else:
-            print('documents false is_valid')
-        faceFusion()
-        return redirect('/upload/')
-    else:
-        form = DocumentForm()
     return render(request, 'myhp/fusion.html', {
-        'form': form,
     })
