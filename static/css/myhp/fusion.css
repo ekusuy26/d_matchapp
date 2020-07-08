@@ -1,0 +1,28 @@
+.fusionWrap{
+  background-color: #fafafa;
+  min-height: calc(100vh - 200px);
+  width: 75%;
+  position: relative;
+}
+
+.fusionBox{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 330px;
+}
+
+.fusionDogImage{
+  height: 250px;
+  width: 250px;
+  border: solid 2px rgba(51, 51, 51,0.4);
+  border-radius: 5px;
+}
+
+.fusionLink{
+  display: block;
+  margin-top: 50px;
+}
