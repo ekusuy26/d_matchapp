@@ -36,5 +36,9 @@ def fusion(request, pk):
     })
 
 def result(request, pk):
+    opponent = Dog.objects.get(id = pk)
+    headLine = '結果'
     return render(request, 'myhp/result.html', {
+        'opponent': opponent,
+        'headLine': headLine,
     })

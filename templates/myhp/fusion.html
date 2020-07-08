@@ -1,16 +1,4 @@
-{% extends '../shared/base.html' %}
-{% block content %}
-<div class="myhpWrap">
-  {% include "./sideBar.html" %}
-  <div class="fusionWrap">
-    <div class="headLine">
-      {{headLine}}
-    </div>
-    <div class="fusionBox">
-      <img class="fusionDogImage" src="{{ user.dog.image.url }}">　　　
-      <img class="fusionDogImage" src="{{ opponent.image.url }}">
-    </div>
-    <a href="{% url 'myhp:result' pk=opponent.id %}" class="fusionLink">合成する</a>
-  </div>
-</div>
-{% endblock content %}
+{% extends './fusionBase.html' %}
+{% block fusion %}
+<a href="{% url 'myhp:result' pk=opponent.id %}" class="fusionLink">合成する</a>
+{% endblock fusion %}

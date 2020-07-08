@@ -1,0 +1,18 @@
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="myhpWrap">
+  {% include "./sideBar.html" %}
+  <div class="fusionWrap">
+    <div class="headLine">
+      {{headLine}}
+    </div>
+    <div class="fusionBox">
+      <img class="fusionDogImage" src="{{ user.dog.image.url }}">　　　
+      <img class="fusionDogImage" src="{{ opponent.image.url }}">
+    </div>
+    {% block fusion %}
+    <!-- content -->
+    {% endblock %}
+  </div>
+</div>
+{% endblock content %}
