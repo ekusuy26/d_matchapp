@@ -1,7 +1,5 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-<div class="myhpWrap">
-  {% include "../myhp/sideBar.html" %}
   <div class="myhpIndexRight">
     <div class="headLine">
       {{headLine}}
@@ -13,5 +11,4 @@
     {% endfor %}
     {% include "../shared/pagination.html" %}
   </div>
-</div>
 {% endblock content %}

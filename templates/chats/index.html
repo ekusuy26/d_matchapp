@@ -1,25 +1,23 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-<div class="myhpWrap">
-  {% include "../myhp/sideBar.html" %}
-  <div class="chatWrap">
-    <div class="chatLeft">
-      {% for party in parties %}
-      {{party.chat}}
-      <a href="{% url 'chats:show' id=party.id %}" class="chatLink">
-        {% for p in party.users.all %}
-        {% if p.id != request.user.id %}
-        <img class="chatUserImage" src="{{ p.dog.image.url }}" style="height: 60px; width: 60px;">
-        <p class="chatUserName">{{p}}</p>
-        {% endif %}
-        {% endfor %}
-      </a>
-      {% endfor%}
-    </div>
-    <div class="chatRight">
-      {% block chat %}
-      <!-- chat -->
-      {% endblock %}
-    </div>
+<div class="chatWrap">
+  <div class="chatLeft">
+    {% for party in parties %}
+    {{party.chat}}
+    <a href="{% url 'chats:show' id=party.id %}" class="chatLink">
+      {% for p in party.users.all %}
+      {% if p.id != request.user.id %}
+      <img class="chatUserImage" src="{{ p.dog.image.url }}" style="height: 60px; width: 60px;">
+      <p class="chatUserName">{{p}}</p>
+      {% endif %}
+      {% endfor %}
+    </a>
+    {% endfor%}
   </div>
+  <div class="chatRight">
+    {% block chat %}
+    <!-- chat -->
+    {% endblock %}
+  </div>
+</div>
 {% endblock content %}
