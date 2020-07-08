@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.topPage, name='topPage'),
     path('index/', views.index, name='index'),
     path('fusion/<int:pk>/', views.fusion, name='fusion'),
+    path('fusion/<int:pk>/result/', views.result, name='result'),
 ]

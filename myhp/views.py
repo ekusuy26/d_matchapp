@@ -34,3 +34,7 @@ def fusion(request, pk):
         'opponent': opponent,
         'headLine': headLine,
     })
+
+def result(request, pk):
+    return render(request, 'myhp/result.html', {
+    })

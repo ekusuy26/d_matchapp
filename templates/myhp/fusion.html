@@ -10,7 +10,7 @@
       <img class="fusionDogImage" src="{{ user.dog.image.url }}">　　　
       <img class="fusionDogImage" src="{{ opponent.image.url }}">
     </div>
-    <a href="#" class="fusionLink">合成する</a>
+    <a href="{% url 'myhp:result' pk=opponent.id %}" class="fusionLink">合成する</a>
   </div>
 </div>
 {% endblock content %}
