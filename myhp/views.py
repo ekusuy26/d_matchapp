@@ -27,6 +27,8 @@ def index(request):
         'dog_flg': dog_flg,
     })
 
-def fusion(request):
+def fusion(request, pk):
+    opponent = Dog.objects.get(id = pk)
     return render(request, 'myhp/fusion.html', {
+        'opponent': opponent,
     })
