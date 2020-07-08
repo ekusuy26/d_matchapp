@@ -33,14 +33,30 @@
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  color: #FF773E;
-  border: solid 2px #FF773E;
+  color: #333333;
+  border: solid 2px #FFFC67;
   border-radius: 100px;
   transition: .4s;
   font-size: larger;
 }
 
 .dogShowLink:hover {
-  background: #FF773E;
+  background: #FFFC67;
+  color: white;
+}
+
+.dogShowFusionLink{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #FF6788;
+  border: solid 2px #FF6788;
+  border-radius: 100px;
+  transition: .4s;
+  font-size: larger;
+}
+
+.dogShowFusionLink:hover {
+  background: #FF6788;
   color: white;
 }

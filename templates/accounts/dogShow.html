@@ -23,7 +23,7 @@
         {% else %}
         <a href="{% url 'accounts:like' pk=dog.id %}" class="dogShowLink">いいねを外す</a>
         {% endif %}
-        <a href="{% url 'myhp:fusion' pk=dog.id %}" class="dogShowLink">合成ボタン</a>
+        <a href="{% url 'myhp:fusion' pk=dog.id %}" class="dogShowFusionLink">合成ボタン</a>
       </div>
     </div>
   </div>

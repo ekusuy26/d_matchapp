@@ -3,11 +3,14 @@
 <div class="myhpWrap">
   {% include "./sideBar.html" %}
   <div class="fusionWrap">
+    <div class="headLine">
+      {{headLine}}
+    </div>
     <div class="fusionBox">
       <img class="fusionDogImage" src="{{ user.dog.image.url }}">　　　
       <img class="fusionDogImage" src="{{ opponent.image.url }}">
-      <a href="#" class="fusionLink">合成する</a>
     </div>
+    <a href="#" class="fusionLink">合成する</a>
   </div>
 </div>
 {% endblock content %}
