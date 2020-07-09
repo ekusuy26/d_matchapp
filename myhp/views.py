@@ -97,7 +97,3 @@ def display(request):
     return render(request, 'myhp/display.html', {
         'objs': objs,
     })
-
-def display(request):
-    return render(request, 'myhp/play.html', {
-    })

@@ -8,6 +8,5 @@ urlpatterns = [
     path('index/', views.index, name='index'),
     path('fusion/<int:pk>/', views.fusion, name='fusion'),
     path('fusion/<int:pk>/result/', views.result, name='result'),
-    path('play/', views.play, name='play'),
     path('display/', views.display, name='display'),
 ]

@@ -1,6 +1,7 @@
 .sideBarWrap{
   margin-right: 10px;
   width: 25%;
+  min-height: calc(100vh - 150px);
 }
 
 .registeredDog{

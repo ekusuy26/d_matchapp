@@ -35,7 +35,7 @@
 }
 
 .allUsers{
-  padding: 30px 15px;
+  padding: 30px 0;
   display: flex;
   flex-wrap:wrap;
   justify-content: flex-start;
@@ -43,7 +43,7 @@
 
 .userBox {
   transition: all 0.6s ease 0s;
-  margin: 20px;
+  margin: 20px 17px;
   display: inline-block;
   text-decoration: none;
   color: #333333;
