@@ -1,13 +1,14 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-<div class="" style="background-color: #fafafa;">
   {% for obj in objs %}
-  <div class="">
-    <img class="" src="{{ obj.first_image.url }}">
-    <img class="" src="{{ obj.second_image.url }}">
+  <div class="displayBox">
+    <img class="displayImage" src="{{ obj.first_image.url }}">
+    <img class="displayImage" src="{{ obj.second_image.url }}">
     {% for o in obj.users.all %}
-    <img class="" src="{{ o.dog.image.url }}" style="height: 50px; width: 50px;">
-    {{ o }}さん
+    <a href="{% url 'accounts:dogShow' pk=o.dog.id %}" class="displayLink">
+      <img class="displayUserImage" src="{{ o.dog.image.url }}">
+      {{ o }}さん
+    </a>
     {% endfor %}
   </div>
   {% endfor %}

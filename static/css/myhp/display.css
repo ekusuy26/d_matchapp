@@ -1,0 +1,21 @@
+.displayWrap{
+  background-color: #fafafa;
+  min-height: calc(100vh - 200px);
+  width: 75%;
+}
+
+.displayImage{
+  border: solid 3px rgba(128,128,128,0.5);
+  border-radius: 5px;
+}
+
+.displayLink{
+  text-decoration: none;
+  color: #333333;
+}
+
+.displayUserImage{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+}
