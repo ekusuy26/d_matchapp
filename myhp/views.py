@@ -88,3 +88,9 @@ def result(request, pk):
         'new_document': new_document,
         'headLine': headLine,
     })
+
+def display(request):
+    objs = Document.objects.order_by('-id')
+    return render(request, 'myhp/display.html', {
+        'objs': objs,
+    })
