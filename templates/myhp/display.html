@@ -1,4 +1,17 @@
 {% extends '../shared/base.html' %}
 {% block content %}
+<div class="">
+  {% for obj in objs %}
+  <div class="">
+    <img class="" src="{{ obj.first_image.url }}">
+    <img class="" src="{{ obj.second_image.url }}">
+    {% for o in obj.users.all %}
+    <img class="" src="{{ o.dog.image.url }}" style="height: 50px; width: 50px;">
+    {{ o }}さん
+    {% endfor %}
+  </div>
+  {% endfor %}
+  {% include "../shared/pagination.html" %}
+</div>
 
 {% endblock content %}
