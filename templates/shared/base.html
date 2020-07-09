@@ -5,6 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- {% load bootstrap4 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %} -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -30,12 +33,12 @@
     {% endif %}
   </div>
   <div class="myhpWrap">
-<nav aria-label="パンくずリスト">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="{% url 'myhp:index' %}">ホーム</a></li>
-    <li class="breadcrumb-item active" aria-current="page">ライブラリ</li>
-  </ol>
-</nav>
+    <!-- <nav aria-label="パンくずリスト">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'myhp:index' %}">ホーム</a></li>
+        <li class="breadcrumb-item active" aria-current="page">ライブラリ</li>
+      </ol>
+    </nav> -->
     {% include "./sideBar.html" %}
     {% block content %}
     <!-- content -->
