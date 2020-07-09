@@ -30,6 +30,12 @@
     {% endif %}
   </div>
   <div class="myhpWrap">
+<nav aria-label="パンくずリスト">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'myhp:index' %}">ホーム</a></li>
+    <li class="breadcrumb-item active" aria-current="page">ライブラリ</li>
+  </ol>
+</nav>
     {% include "./sideBar.html" %}
     {% block content %}
     <!-- content -->
