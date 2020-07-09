@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from accounts.models import Dog
 from django.core.paginator import Paginator
-from . import forms
-from .models import Image
+from .models import Document
 from PIL import Image
 import cv2
 from django.conf import settings
@@ -44,10 +43,20 @@ def result(request, pk):
     headLine = '結果'
     myself = Dog.objects.get(user_id = request.user.id)
     opponent = Dog.objects.get(id = pk)
+
+    max_id = Document.objects.latest('id').id
+    docment_tbl = Document()
+    docment_tbl.first_image = "results/output" + str(max_id) + ".jpg"
+    docment_tbl.second_image = "results/output_two" + str(max_id) + ".jpg"
+    docment_tbl.save()
+    new_document = Document.objects.latest('id')
+    new_document.users.add(request.user)
+    new_document.users.add(opponent.user.id)
+
     input_path = settings.BASE_DIR + myself.image.url
     input_path_two = settings.BASE_DIR + opponent.image.url
-    output_path = settings.BASE_DIR + "/media/results/output" + str(request.user.id) + str(pk) + ".jpg"
-    output_path_two = settings.BASE_DIR + "/media/results/output_two" + str(request.user.id) + str(pk) + ".jpg"
+    output_path = settings.BASE_DIR + "/media/results/output" + str(max_id) + ".jpg"
+    output_path_two = settings.BASE_DIR + "/media/results/output_two" + str(max_id) + ".jpg"
     src = cv2.imread(input_path)
     src_two = cv2.imread(input_path_two)
     img = src.copy()
@@ -73,15 +82,9 @@ def result(request, pk):
     
             cv2.imwrite(output_path, dst_face_01)
             cv2.imwrite(output_path_two, dst_face_02)
-    img_tbl = Image()
-    img_tbl.first_image = output_path
-    img_tbl.second_image = output_path_two
-    img_tbl.save()
-    new_image = Image.objects.latest('id')
-    new_image.users.add(request.user)
-    new_image.users.add(opponent.user.id)
 
     return render(request, 'myhp/result.html', {
         'opponent': opponent,
+        'new_document': new_document,
         'headLine': headLine,
     })

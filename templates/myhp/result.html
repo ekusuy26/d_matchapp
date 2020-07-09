@@ -1,4 +1,7 @@
 {% extends '../shared/fusionBase.html' %}
 {% block fusion %}
-hogehoge
+<div class="fusionBox">
+  <img class="fusionDogImage" src="{{ new_document.first_image.url }}">　　　
+  <img class="fusionDogImage" src="{{ new_document.second_image.url }}">
+</div>
 {% endblock fusion %}
