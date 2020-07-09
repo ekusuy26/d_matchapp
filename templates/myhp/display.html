@@ -1,5 +1,6 @@
 {% extends '../shared/base.html' %}
 {% block content %}
+<div class="displayWrap">
   {% for obj in objs %}
   <div class="displayBox">
     <img class="displayImage" src="{{ obj.first_image.url }}">

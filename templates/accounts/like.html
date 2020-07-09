@@ -1,14 +1,16 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-  <div class="myhpIndexRight">
-    <div class="headLine">
-      {{headLine}}
-    </div>
+<div class="myhpIndexRight">
+  <div class="headLine">
+    {{headLine}}
+  </div>
+  <div class="likeWrap">
     {% for obj in objs %}
     {% block like %}
     <!-- like -->
     {% endblock %}
     {% endfor %}
-    {% include "../shared/pagination.html" %}
   </div>
+  {% include "../shared/pagination.html" %}
+</div>
 {% endblock content %}
