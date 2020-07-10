@@ -1,17 +1,22 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-{% include "../shared/sideBar.html" %}
-<div class="myhpIndexRight">
-  <div class="headLine">
-    {{headLine}}
+<div class="breadcrumbWrap mx-auto w-75 px-5">
+  <nav aria-label="パンくずリスト">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">ホーム</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{headLine}}</li>
+    </ol>
+  </nav>
+</div>
+<div class="mx-auto w-75 d-flex px-5">
+  {% include "../shared/sideBar.html" %}
+  <div class="wrapRight col-lg-9 pt-4">
+    <div class="likeWrap">
+      {% block like %}
+      <!-- like -->
+      {% endblock %}
+    </div>
+    {% include "../shared/pagination.html" %}
   </div>
-  <div class="likeWrap">
-    {% for obj in objs %}
-    {% block like %}
-    <!-- like -->
-    {% endblock %}
-    {% endfor %}
-  </div>
-  {% include "../shared/pagination.html" %}
 </div>
 {% endblock content %}

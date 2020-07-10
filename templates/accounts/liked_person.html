@@ -1,5 +1,6 @@
 {% extends './like.html' %}
 {% block like %}
+{% for obj in objs %}
 <a href="{% url 'accounts:dogShow' pk=obj.dog.id %}" class="likeLink">
   <img class="likeImage" src="{{ obj.dog.image.url }}">
   <div class="likeText">
@@ -10,4 +11,5 @@
     紹介文：{{obj.dog.introduction}}<br>
   </div>
 </a>
+{% endfor %}
 {% endblock like %}
