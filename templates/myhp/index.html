@@ -9,19 +9,16 @@
 </div>
 <div class="mx-auto w-75 d-flex px-5">
   {% include "../shared/sideBar.html" %}
-  <div class="myhpIndexRight col-lg-9">
-    <div class="headLine">
+  <div class="myhpIndexRight col-lg-9 pt-4">
+    <div class="headLine w-25 mx-auto text-center">
       {{headLine}}
     </div>
-    <div class="allUsers">
+    <div class="allUsers d-flex py-5">
       {% for obj in objs %}
-      <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox">
+      <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox col-lg-3 text-center">
         <img class="userImage" src="{{ obj.image.url }}">
-        <div class="userName">なまえ：{{ obj.dogname }}</div>
-        <div class="userInfo">
-          <div>{{ obj.sex }}</div>
-          <div>{{ obj.age }}さい</div>
-        </div>
+        <div>なまえ：{{ obj.dogname }}</div>
+          <div>{{ obj.sex }}&emsp;&emsp;&emsp;{{ obj.age }}さい</div>
       </a>
       {% endfor %}
     </div>
