@@ -1,15 +1,17 @@
 {% extends './like.html' %}
 {% block like %}
 {% for obj in objs %}
-<a href="{% url 'accounts:dogShow' pk=obj.dog.id %}" class="likeLink">
-  <img class="likeImage" src="{{ obj.dog.image.url }}">
-  <div class="likeText">
-    {{obj.dog.user.username}}さん<br>
-    なまえ：{{obj.dog.dogname}}<br>
-    {{obj.dog.age}}さい<br>
-    性別：{{obj.dog.sex}}<br>
-    紹介文：{{obj.dog.introduction}}<br>
-  </div>
-</a>
+<div class="likeBox mx-auto col-9 my-5 p-0">
+  <a href="{% url 'accounts:dogShow' pk=obj.dog.id %}" class="likeLink d-flex">
+    <img class="likeImage" src="{{ obj.dog.image.url }}">
+    <div class="p-4">
+      {{obj.dog.user.username}}さん<br>
+      なまえ：{{obj.dog.dogname}}<br>
+      {{obj.dog.age}}さい<br>
+      性別：{{obj.dog.sex}}<br>
+      紹介文：{{obj.dog.introduction}}<br>
+    </div>
+  </a>
+</div>
 {% endfor %}
 {% endblock like %}
