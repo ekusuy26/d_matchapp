@@ -2,9 +2,10 @@
   margin-top: 100px;
 }
 
-.myhpIndexRight{
+.wrapRight{
   background-color: #fafafa;
-  /* min-height: calc(100vh - 200px); */
+  min-height: calc(100vh - 220px);
+  position: relative;
 }
 
 .headLine {
@@ -23,14 +24,6 @@
   transform: translateX(-50%);
   background-color: #00FFFF;
   border-radius: 2px;
-}
-
-.allUsers{
-  /* padding: 18px 0;
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: flex-start;
-  min-height: calc(100% - 120px); */
 }
 
 .userBox {

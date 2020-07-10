@@ -9,11 +9,11 @@
 </div>
 <div class="mx-auto w-75 d-flex px-5">
   {% include "../shared/sideBar.html" %}
-  <div class="myhpIndexRight col-lg-9 pt-4">
+  <div class="wrapRight col-lg-9 pt-4">
     <div class="headLine w-25 mx-auto text-center">
       {{headLine}}
     </div>
-    <div class="allUsers d-flex py-5">
+    <div class="d-flex py-5">
       {% for obj in objs %}
       <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox col-lg-3 text-center">
         <img class="userImage" src="{{ obj.image.url }}">

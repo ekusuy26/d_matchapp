@@ -1,4 +1,4 @@
 .pager{
-  height: 30px;
-  background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
 }
