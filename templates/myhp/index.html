@@ -1,22 +1,31 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-{% include "../shared/sideBar.html" %}
-<div class="myhpIndexRight">
-  <div class="headLine">
-    {{headLine}}
+<div class="breadcrumbWrap col-lg-6">
+  <nav aria-label="パンくずリスト">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">ホーム</li>
+    </ol>
+  </nav>
+</div>
+<div class="baseWrap">
+  {% include "../shared/sideBar.html" %}
+  <div class="myhpIndexRight">
+    <div class="headLine">
+      {{headLine}}
+    </div>
+    <div class="allUsers">
+      {% for obj in objs %}
+      <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox">
+        <img class="userImage" src="{{ obj.image.url }}">
+        <div class="userName">なまえ：{{ obj.dogname }}</div>
+        <div class="userInfo">
+          <div>{{ obj.sex }}</div>
+          <div>{{ obj.age }}さい</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% include "../shared/pagination.html" %}
   </div>
-  <div class="allUsers">
-    {% for obj in objs %}
-    <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox">
-      <img class="userImage" src="{{ obj.image.url }}">
-      <div class="userName">なまえ：{{ obj.dogname }}</div>
-      <div class="userInfo">
-        <div>{{ obj.sex }}</div>
-        <div>{{ obj.age }}さい</div>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-  {% include "../shared/pagination.html" %}
 </div>
 {% endblock content %}

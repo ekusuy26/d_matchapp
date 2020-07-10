@@ -5,9 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <!-- {% load bootstrap4 %}
+  {% load bootstrap4 %}
   {% bootstrap_css %}
-  {% bootstrap_javascript jquery='full' %} -->
+  {% bootstrap_javascript jquery='full' %}
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -19,30 +19,20 @@
 </head>
 
 <body>
-  <div class="header">
-    <a href="{% url 'myhp:topPage' %}">
-      <div class="headerLogo"></div>
-    </a>
+  <div class="header container-fluid d-flex justify-content-between align-items-center fixed-top px-5">
+    <a href="{% url 'myhp:topPage' %}" class="headerLogo d-block h-100"></a>
     {% if user.is_authenticated %}
-    <a class="headerLink" href="{% url 'accounts:logout' %}">ログアウト</a>
+    <a class="btn btn-outline-primary rounded-pill h-50 align-middle mx-3" href="{% url 'accounts:logout' %}">ログアウト</a>
     {% else %}
-    <div class="">
-      <a class="headerLink" href="#">新規登録</a>
-      <a class="headerLink" href="{% url 'accounts:login' %}">ログインする</a>
+    <div class="row">
+      <a class="btn btn-outline-primary rounded-pill h-50 align-middle mx-3" href="{% url 'accounts:create' %}">新規登録</a>
+      <a class="btn btn-outline-primary rounded-pill h-50 align-middle mx-3" href="{% url 'accounts:login' %}">ログインする</a>
     </div>
     {% endif %}
   </div>
-  <!-- <nav aria-label="パンくずリスト">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'myhp:index' %}">ホーム</a></li>
-      <li class="breadcrumb-item active" aria-current="page">ライブラリ</li>
-    </ol>
-  </nav> -->
-  <div class="baseWrap">
     {% block content %}
     <!-- content -->
     {% endblock %}
-  </div>
   {% include "./footer.html" %}
 </body>
 
