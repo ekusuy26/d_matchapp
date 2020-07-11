@@ -6,6 +6,7 @@
 
 .cahtMembers{
   border-right: solid 1px rgba(51, 51, 51,0.1);
+  overflow: scroll;
 }
 
 .chatLink{
@@ -28,4 +29,8 @@
 
 .chatLogo{
   opacity: 0.3;
+}
+
+.chatRight{
+  position: relative;
 }

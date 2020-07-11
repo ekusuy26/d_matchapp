@@ -1,41 +1,37 @@
 {% extends './index.html' %}
 {% block chat %}
-<div class="chatMessagesWrap">
 
-  <div class="chatMessageMain">
-    {% for chat in chats %}
-    <div class="messageBox">
-      {% if chat.user.id == request.user.id %}
-      <div class="myComment">
-        <p class="myCommentText">
-          {{ chat.text}}
-          <a href="#" class="commentDeleteIcon">
+<div class="chatMessageWrap p-4">
+  {% for chat in chats %}
+  {% if chat.user.id == request.user.id %}
+  <div class="clearfix">
+    <div class="myComment float-right d-flex">
+      <!-- <a href="#" class="commentDeleteIcon">
             <i class="fas fa-trash-alt" style="font-size: 9px;"></i>
-          </a>
-        </p>
-      </div>
-      <div class="commentUser">
-        <img class="chatUserImage" src="{{ chat.user.dog.image.url }}" style="height: 30px; width: 30px;">
+          </a> -->
+      <p class="myCommentText">
+        {{ chat.text}}
+      </p>
+      <div class="commentUser text-center">
+        <img class="commentUserImage" src="{{ chat.user.dog.image.url }}">
         <p>{{ chat.user.username }}</p>
       </div>
-      {% else %}
-      <div class="theircommentUser">
-        <img class="chatUserImage" src="{{ chat.user.dog.image.url }}" style="height: 30px; width: 30px;">
-        <p>{{ chat.user.username }}</p>
-      </div>
-      <div class="theirComment">
-        <p class="theirCommentText">
-          {{ chat.text}}
-        </p>
-      </div>
-      {% endif %}
     </div>
-    {% endfor%}
   </div>
-
+  {% else %}
+  <div class="theirComment d-flex">
+    <div class="theircommentUser text-center mr-3">
+      <img class="commentUserImage" src="{{ chat.user.dog.image.url }}">
+      <p>{{ chat.user.username }}</p>
+    </div>
+    <p class="theirCommentText">
+      {{ chat.text}}
+    </p>
+  </div>
+  {% endif %}
+  {% endfor%}
 </div>
-
-<div class="chatMessageForm">
+<div class="chatMessageForm w-100">
   <form id="new_message" action="" method="POST">
     {% csrf_token %}
     <textarea name="text" id="id_text" placeholder="メッセージを入力"></textarea>

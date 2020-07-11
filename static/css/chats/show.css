@@ -1,51 +1,33 @@
-.chatMessagesWrap{
-  background-color: rgba(51, 51, 51,0.4);
-  height: calc(80% - 8px);
-  padding: 3px;
-}
-
-.chatMessageForm{
-  height: 20%;
-  border: solid 1px rgba(51, 51, 51,0.4);
-}
-
-.chatMessageMain{
+.chatMessageWrap{
   background-image: url("/static/images/chat-image.jpg");
   background-color:rgba(255,255,255,0.6);
   background-blend-mode:lighten;
-  height: 100%;
   overflow: scroll;
+  height: calc(100% - 150px);
 }
 
-.messageBox{
-  display: flex;
-  position: relative;
-  font-size: 12px;
-  padding: 5px;
+.commentUserImage{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
 }
 
-.commentUser{
-  margin: 5px 0;
-  position: absolute;
-  right: 0;
-  width: 50px;
-  overflow: hidden;
+.myCommentText{
+  display: table;
 }
 
-.myComment {
-  margin: 5px 50px 5px auto;
-  position: relative;
+.theirCommentText{
+  display: table;
 }
 
 .commentDeleteIcon{
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
   right: -10px;
-  color: #333333;
+  color: #333333; */
 }
 
 .myComment .myCommentText {
-  display: inline-block;
   position: relative; 
   margin: 0 10px 0 0;
   padding: 8px;
@@ -66,18 +48,7 @@
   transform: rotate(-35deg);
 }
 
-.theircommentUser{
-  margin: 5px 0;
-  right: 0;
-  width: 50px;
-  overflow: hidden;
-}
-
-.theirComment {
-  margin: 5px 0;
-}
 .theirComment .theirCommentText {
-  display: inline-block;
   position: relative; 
   margin: 0 10px 0 0;
   padding: 8px;
@@ -99,23 +70,27 @@
 }
 
 #new_message{
-  height: 100%;
+  height: 150px;
   position: relative;
 }
 
 #id_text{
-  height: 80%;
+  height: 90%;
   width: 80%;
   position: absolute;
   margin: auto;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: -50px;
 }
 
 .chatBtn{
   position: absolute;
   top: 13px;
-  right: 10px;
+  right: 30px;
+}
+.chatMessageForm{
+  position: absolute;
+  bottom: 0;
 }
