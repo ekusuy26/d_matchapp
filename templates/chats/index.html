@@ -3,7 +3,7 @@
 <div class="breadcrumbWrap mx-auto w-75 px-5">
   <nav aria-label="パンくずリスト">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}">ホーム</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}"><i class="fa fa-home">ホーム</i></a></li>
       <li class="breadcrumb-item active" aria-current="page">メッセージ</li>
     </ol>
   </nav>
@@ -25,14 +25,12 @@
       {% endfor%}
     </div>
     <div class="chatRight col-lg-7 p-0">
-      {% block chat %}
       <div class="h-100 d-flex align-items-center justify-content-center">
         <div>
           <img class="chatLogo w-25 mx-auto d-block" src="/static/images/mark.png">
           <img class="chatLogo w-100" src="/static/images/logo.png">
         </div>
       </div>
-      {% endblock %}
     </div>
   </div>
 </div>

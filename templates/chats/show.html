@@ -1,45 +1,72 @@
-{% extends './index.html' %}
-{% block chat %}
-
-<div class="chatMessageWrap p-4">
-  {% for chat in chats %}
-  {% if chat.user.id == request.user.id %}
-  <div class="clearfix">
-    <div class="myComment float-right d-flex">
-      <!-- <a href="#" class="commentDeleteIcon">
-            <i class="fas fa-trash-alt" style="font-size: 9px;"></i>
-          </a> -->
-      <p class="myCommentText">
-        {{ chat.text}}
-      </p>
-      <div class="commentUser text-center">
-        <img class="commentUserImage" src="{{ chat.user.dog.image.url }}">
-        <p>{{ chat.user.username }}</p>
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="breadcrumbWrap mx-auto w-75 px-5">
+  <nav aria-label="パンくずリスト">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}"><i class="fa fa-home">ホーム</i></a></li>
+      <li class="breadcrumb-item"><a href="{% url 'chats:index' %}">メッセージ一覧</a></li>
+      <li class="breadcrumb-item active" aria-current="page">個別メッセージ</li>
+    </ol>
+  </nav>
+</div>
+<div class="mx-auto w-75 d-flex px-5">
+  {% include "../shared/sideBar.html" %}
+  <div class="chatWrap col-lg-9 d-flex p-0">
+    <div class=" cahtMembers col-lg-5">
+      {% for party in parties %}
+      {{party.chat}}
+      <a href="{% url 'chats:show' id=party.id %}" class="chatLink d-flex align-items-center my-2 p-2">
+        {% for p in party.users.all %}
+        {% if p.id != request.user.id %}
+        <img class="chatUserImage" src="{{ p.dog.image.url }}">
+        <p class="mb-0">{{p}}</p>
+        {% endif %}
+        {% endfor %}
+      </a>
+      {% endfor%}
+    </div>
+    <div class="chatRight col-lg-7 p-0">
+      <div class="chatMessageWrap p-4">
+        {% for chat in chats %}
+        {% if chat.user.id == request.user.id %}
+        <div class="clearfix">
+          <div class="myComment float-right d-flex">
+            <!-- <a href="#" class="commentDeleteIcon">
+                  <i class="fas fa-trash-alt" style="font-size: 9px;"></i>
+                </a> -->
+            <p class="myCommentText">
+              {{ chat.text}}
+            </p>
+            <div class="commentUser text-center">
+              <img class="commentUserImage" src="{{ chat.user.dog.image.url }}">
+              <p>{{ chat.user.username }}</p>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="theirComment d-flex">
+          <div class="theircommentUser text-center mr-3">
+            <img class="commentUserImage" src="{{ chat.user.dog.image.url }}">
+            <p>{{ chat.user.username }}</p>
+          </div>
+          <p class="theirCommentText">
+            {{ chat.text}}
+          </p>
+        </div>
+        {% endif %}
+        {% endfor%}
       </div>
+      <div class="chatMessageForm w-100">
+        <form id="new_message" action="" method="POST">
+          {% csrf_token %}
+          <textarea name="text" id="id_text" placeholder="メッセージを入力"></textarea>
+          <button type="submit" class="chatBtn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
     </div>
   </div>
-  {% else %}
-  <div class="theirComment d-flex">
-    <div class="theircommentUser text-center mr-3">
-      <img class="commentUserImage" src="{{ chat.user.dog.image.url }}">
-      <p>{{ chat.user.username }}</p>
-    </div>
-    <p class="theirCommentText">
-      {{ chat.text}}
-    </p>
-  </div>
-  {% endif %}
-  {% endfor%}
 </div>
-<div class="chatMessageForm w-100">
-  <form id="new_message" action="" method="POST">
-    {% csrf_token %}
-    <textarea name="text" id="id_text" placeholder="メッセージを入力"></textarea>
-    <button type="submit" class="chatBtn">
-      <i class="fas fa-paper-plane"></i>
-    </button>
-  </form>
-</div>
-
-
-{% endblock chat %}
+{% endblock content %}
