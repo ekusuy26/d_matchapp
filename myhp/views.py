@@ -12,7 +12,10 @@ def topPage(request):
     if request.user.is_authenticated:
         return redirect('myhp:index')
     else:
-        return render(request, 'myhp/topPage.html', {})
+        objs = Dog.objects.order_by('-id')[:5]
+        return render(request, 'myhp/topPage.html', {
+            'objs': objs,
+        })
 
 def index(request):
     headLine = 'ユーザー一覧'

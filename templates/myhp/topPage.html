@@ -57,8 +57,8 @@
 <div class="toppage-user-wrap">
   <div class="toppage-user-head">新着のお相手</div>
   <div class="toppage-users">
-    {% for dog in dogs %}
-    <a href="{% url 'dogshow' pk=dog.id %}" class="toppage-user-link">
+    {% for dog in objs %}
+    <a href="#" class="toppage-user-link">
       <div class="toppage-user">
         <img class="toppage-user-photo" src="{{ dog.image.url }}">
         <div class="toppage-user-explanation">
@@ -73,5 +73,5 @@
     {% endfor %}
   </div>
 </div>
-
+{% include "../shared/footer.html" %}
 {% endblock content %}
