@@ -1,44 +1,54 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>CREATE</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-    <div class="memberWrap">
-        <div class="memberBox">
-            <a href="{% url 'accounts:login' %}" class="loginLink">
-                Login here＞＞＞
-            </a>
-            <div class="memberSabLogo"></div>
-            <div class="memberLogo"></div>
-            <form action="" method="POST">
-                {% csrf_token %}
-                <div class="formMemberGroup">
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="container" style="margin-top: 200px;">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign Up</h3>
+                <div class="d-flex justify-content-end social_icon">
+                    <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <span><i class="fab fa-twitter-square"></i></span>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="" method="POST">
+                    {% csrf_token %}
                     <label class="memberLabel">username</label>
-                    {{ form.username }}
-                    <p class="memberText">・Please enter half-width alphabets and numbers.</p>
-                </div>
-                <div class="formMemberGroup">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        {{ form.username }}
+                    </div>
                     <label class="memberLabel">password</label>
-                    {{ form.password1 }}
-                    <p class="memberText">・The password must be at least 8 characters.</p>
-                    <p class="memberText">・It cannot be a commonly used password.</p>
-                    <p class="memberText">・It cannot be a password with only numbers.</p>
-                </div>
-                <div class="formMemberGroup">
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        {{ form.password1 }}
+                    </div>
                     <label class="memberLabel">password(one more)</label>
-                    {{ form.password2 }}
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        {{ form.password2 }}
+                    </div>
+                    <!-- <div class="row align-items-center remember">
+                        <input type="checkbox">Remember Me
+                    </div> -->
+                    <div class="form-group">
+                        <input type="submit" value="Sign Up" class="btn float-right login_btn">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Do you have an account?<a href="{% url 'accounts:login' %}">Sign In</a>
                 </div>
-                <button type="submit" class="memberbtn">CREATE</button>
-            </form>
+            </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>
+{% endblock content %}
