@@ -1,37 +1,31 @@
 .chatWrap{
+  min-height: calc(100vh - 220px);
   background-color: #fafafa;
-  min-height: calc(100vh - 200px);
-  width: 75%;
-  position: relative;
-  display: flex;
+  border: solid 1px rgba(51, 51, 51,0.1);
 }
 
-.chatLeft{
-  width: 40%;
+.cahtMembers{
+  border-right: solid 1px rgba(51, 51, 51,0.1);
 }
 
 .chatLink{
   background-color: #ffffff;
-  display: flex;
-  justify-content: space-around;
-  text-align: center;
-  width: 90%;
-  margin: 5px auto;
-  padding: 5px;
   text-decoration: none;
-  color: #333333;
+  color: #333333; 
+}
+
+.chatLink:hover{
+  text-decoration: none;
+  color: #333333; 
 }
 
 .chatUserImage{
   height: 60px;
   width: 60px;
   border-radius: 100%;
+  margin: 0 20px;
 }
 
-.chatUserName{
-  align-self: center;
-}
-
-.chatRight{
-  width: 60%;
+.chatLogo{
+  opacity: 0.3;
 }
