@@ -4,18 +4,19 @@
   <nav aria-label="パンくずリスト">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}"><i class="fa fa-home">ホーム</i></a></li>
-      <li class="breadcrumb-item active" aria-current="page">ごうせい</li>
+      <li class="breadcrumb-item active" aria-current="page">合成一覧</li>
     </ol>
   </nav>
 </div>
 <div class="mx-auto w-75 d-flex px-5">
   {% include "../shared/sideBar.html" %}
-  <div class="displayRight col-lg-9 pt-4">
+  <div class="displayRight w-100">
     <div class="displayWrap">
       {% for obj in objs %}
-      <div class="displayBox">
+      <div class="displayBox text-center p-2 my-1 w-75 mx-auto">
         <img class="displayImage" src="{{ obj.first_image.url }}">
         <img class="displayImage" src="{{ obj.second_image.url }}">
+        &emsp;&emsp;
         {% for o in obj.users.all %}
         <a href="{% url 'accounts:dogShow' pk=o.dog.id %}" class="displayLink">
           <img class="displayUserImage" src="{{ o.dog.image.url }}">
