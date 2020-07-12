@@ -8,3 +8,10 @@
   border: solid 2px rgba(51, 51, 51,0.4);
   border-radius: 5px;
 }
+
+.fusionResultImage{
+  height: 100px;
+  width: 100px;
+  border: solid 2px rgba(51, 51, 51,0.4);
+  border-radius: 100%;
+}

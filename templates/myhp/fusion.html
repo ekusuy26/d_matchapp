@@ -1,4 +1,26 @@
-{% extends '../shared/fusionBase.html' %}
-{% block fusion %}
-<a href="{% url 'myhp:result' pk=opponent.id %}" class="btn btn-outline-info rounded-pill align-middle">合成する</a>
-{% endblock fusion %}
+{% extends '../shared/base.html' %}
+{% block content %}
+<div class="breadcrumbWrap mx-auto w-75 px-5">
+  <nav aria-label="パンくずリスト">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}"><i class="fa fa-home">ホーム</i></a></li>
+      <li class="breadcrumb-item active" aria-current="page">合成画面</li>
+    </ol>
+  </nav>
+</div>
+<div class="mx-auto w-75 d-flex px-5">
+  {% include "../shared/sideBar.html" %}
+  <div class="fusionWrap w-100 d-flex align-items-center">
+    <div class="w-75 mx-auto text-center">
+      {% block fusion %}
+      <div class="fusionBox mb-5">
+        <img class="fusionDogImage" src="{{ user.dog.image.url }}">
+        &emsp;&emsp;&emsp;&emsp;&emsp;
+        <img class="fusionDogImage" src="{{ opponent.image.url }}">
+      </div>
+      <a href="{% url 'myhp:result' pk=opponent.id %}" class="btn btn-outline-info rounded-pill align-middle">合成する</a>
+      {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

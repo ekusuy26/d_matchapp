@@ -1,7 +1,16 @@
-{% extends '../shared/fusionBase.html' %}
+{% extends './fusion.html' %}
 {% block fusion %}
+<div class="fusionBox mb-5">
+  <img class="fusionResultImage" src="{{ user.dog.image.url }}">
+  <p class="d-inline">さんと</p>
+  &emsp;
+  <img class="fusionResultImage" src="{{ opponent.image.url }}">
+  <p class="d-inline">さんを合成すると</p>
+</div>
 <div class="fusionBox">
-  <img class="fusionDogImage" src="{{ new_document.first_image.url }}">　　　
+  <img class="fusionDogImage" src="{{ new_document.first_image.url }}">
+  &emsp;&emsp;&emsp;&emsp;&emsp;
   <img class="fusionDogImage" src="{{ new_document.second_image.url }}">
 </div>
+あいてにいいね！
 {% endblock fusion %}
