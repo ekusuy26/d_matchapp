@@ -18,20 +18,21 @@
           <i class="fas fa-thumbs-up"></i>&emsp;{{dog.like_num}}&emsp;いいね！
         </div>
         {% if like_flg == 0 %}
-        <a href="{% url 'accounts:like' pk=dog.id %}" class="mx-auto w-75 d-block btn btn-warning rounded-pill align-middle mb-3">いいねボタン</a>
+        <a href="{% url 'accounts:like' pk=dog.id %}"
+          class="mx-auto w-75 d-block btn btn-warning rounded-pill align-middle mb-3">いいねボタン</a>
         {% else %}
-        <a href="{% url 'accounts:like' pk=dog.id %}" class="mx-auto w-75 d-block btn btn-danger rounded-pill align-middle mb-3">いいねを外す</a>
+        <a href="{% url 'accounts:like' pk=dog.id %}"
+          class="mx-auto w-75 d-block btn btn-danger rounded-pill align-middle mb-3">いいねを外す</a>
         {% endif %}
-        <a href="{% url 'myhp:fusion' pk=dog.id %}" class="mx-auto w-75 d-block btn btn-info rounded-pill align-middle">合成ボタン</a>
+        <a href="{% url 'myhp:fusion' pk=dog.id %}"
+          class="mx-auto w-75 d-block btn btn-info rounded-pill align-middle">合成ボタン</a>
       </div>
       <div class="dogShowNav p-3">
-        <!-- <div class="dogShowRightBox p-3"> -->
-          飼い主：{{dog.user.username}}<br>
-          名前：{{dog.dogname}}<br>
-          年齢：{{dog.age}}<br>
-          性別：{{dog.sex}}<br>
-          紹介文：{{dog.introduction}}
-        <!-- </div> -->
+        飼い主：{{dog.user.username}}<br>
+        名前：{{dog.dogname}}<br>
+        年齢：{{dog.age}}<br>
+        性別：{{dog.sex}}<br>
+        紹介文：{{dog.introduction}}
       </div>
     </div>
   </div>
