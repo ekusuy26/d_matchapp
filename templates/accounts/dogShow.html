@@ -11,27 +11,27 @@
 <div class="mx-auto w-75 d-flex px-5">
   {% include "../shared/sideBar.html" %}
   <div class="dogShowWrap w-100 p-5">
-    <div class="dogShowBox mx-auto w-75 d-flex">
-      <div class="dogShowLeft mr-3">
-        <img class="dogShowImage d-block" src="{{ dog.image.url }}">
-        {% if like_flg == 0 %}
-        <a href="{% url 'accounts:like' pk=dog.id %}" class="dogShowLink">いいねボタン</a>
-        {% else %}
-        <a href="{% url 'accounts:like' pk=dog.id %}" class="dogShowLink">いいねを外す</a>
-        {% endif %}
-        <a href="{% url 'myhp:fusion' pk=dog.id %}" class="dogShowFusionLink">合成ボタン</a>
-      </div>
-      <div class="dogShowRight w-100">
-        <div class="dogShowRightBox p-3 mb-3">
+    <div class="dogShowBox mx-auto h-100 w-75 d-flex p-3">
+      <div class="dogShowLeft mr-3 text-center">
+        <img class="dogShowImage" src="{{ dog.image.url }}">
+        <div class="dogShowNav w-100 p-3 mb-3">
           <i class="fas fa-thumbs-up"></i>{{dog.like_num}}いいね！
         </div>
-        <div class="dogShowRightBox p-3">
+        {% if like_flg == 0 %}
+        <a href="{% url 'accounts:like' pk=dog.id %}" class="mx-auto w-75 d-block btn btn-warning rounded-pill align-middle mb-3">いいねボタン</a>
+        {% else %}
+        <a href="{% url 'accounts:like' pk=dog.id %}" class="mx-auto w-75 d-block btn btn-danger rounded-pill align-middle mb-3">いいねを外す</a>
+        {% endif %}
+        <a href="{% url 'myhp:fusion' pk=dog.id %}" class="mx-auto w-75 d-block btn btn-info rounded-pill align-middle">合成ボタン</a>
+      </div>
+      <div class="dogShowNav p-3">
+        <!-- <div class="dogShowRightBox p-3"> -->
           飼い主：{{dog.user.username}}<br>
           名前：{{dog.dogname}}<br>
           年齢：{{dog.age}}<br>
           性別：{{dog.sex}}<br>
           紹介文：{{dog.introduction}}
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
