@@ -10,14 +10,17 @@
 </div>
 <div class="mx-auto w-75 d-flex px-5">
   {% include "../shared/sideBar.html" %}
-  <div class="fusionWrap">
-    <div class="fusionBox">
-      <img class="fusionDogImage" src="{{ user.dog.image.url }}">&emsp;&emsp;&emsp;
-      <img class="fusionDogImage" src="{{ opponent.image.url }}">
+  <div class="fusionWrap w-100 d-flex align-items-center">
+    <div class="w-75 mx-auto text-center">
+      <div class="fusionBox mb-5">
+        <img class="fusionDogImage" src="{{ user.dog.image.url }}">
+        &emsp;&emsp;&emsp;&emsp;&emsp;
+        <img class="fusionDogImage" src="{{ opponent.image.url }}">
+      </div>
+      {% block fusion %}
+      <!-- content -->
+      {% endblock %}
     </div>
-    {% block fusion %}
-    <!-- content -->
-    {% endblock %}
   </div>
 </div>
 {% endblock content %}

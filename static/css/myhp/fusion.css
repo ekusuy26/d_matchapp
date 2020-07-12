@@ -1,33 +1,10 @@
 .fusionWrap{
-  /* background-color: #fafafa;
-  min-height: calc(100vh - 200px);
-  width: 75%; */
-}
-
-.fusionBox{
-  /* margin-top: 20px; */
+  background-color: #fafafa;
 }
 
 .fusionDogImage{
-  /* height: 250px;
+  height: 250px;
   width: 250px;
   border: solid 2px rgba(51, 51, 51,0.4);
-  border-radius: 5px; */
-}
-
-.fusionLink {
-  /* margin-top: 50px;
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #FFA167;
-  border: solid 2px #FFA167;
-  border-radius: 100px;
-  transition: .4s;
-  font-size: larger; */
-}
-
-.fusionLink:hover {
-  /* background: #FFA167;
-  color: white; */
+  border-radius: 5px;
 }
