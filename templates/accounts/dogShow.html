@@ -1,22 +1,19 @@
 {% extends '../shared/base.html' %}
 {% block content %}
-{% include "../shared/sideBar.html" %}
-  <div class="myhpIndexRight">
-    <div class="dogShowWrap">
-      <div class="dogShowLeft">
-        <div class="dogShowLikeBox">
-          <i class="fas fa-thumbs-up"></i>{{dog.like_num}}いいね！
-        </div>
-        <div class="dogShowDetails">
-          飼い主：{{dog.user.username}}<br>
-          名前：{{dog.dogname}}<br>
-          年齢：{{dog.age}}<br>
-          性別：{{dog.sex}}<br>
-          紹介文：{{dog.introduction}}
-        </div>
-      </div>
-      <div class="dogShowRight">
-        <img class="dogShowImage" src="{{ dog.image.url }}">
+<div class="breadcrumbWrap mx-auto w-75 px-5">
+  <nav aria-label="パンくずリスト">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}">ホーム</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{headLine}}</li>
+    </ol>
+  </nav>
+</div>
+<div class="mx-auto w-75 d-flex px-5">
+  {% include "../shared/sideBar.html" %}
+  <div class="dogShowWrap w-100 p-5">
+    <div class="dogShowBox mx-auto w-75 d-flex">
+      <div class="dogShowLeft mr-3">
+        <img class="dogShowImage d-block" src="{{ dog.image.url }}">
         {% if like_flg == 0 %}
         <a href="{% url 'accounts:like' pk=dog.id %}" class="dogShowLink">いいねボタン</a>
         {% else %}
@@ -24,6 +21,19 @@
         {% endif %}
         <a href="{% url 'myhp:fusion' pk=dog.id %}" class="dogShowFusionLink">合成ボタン</a>
       </div>
+      <div class="dogShowRight w-100">
+        <div class="dogShowRightBox p-3 mb-3">
+          <i class="fas fa-thumbs-up"></i>{{dog.like_num}}いいね！
+        </div>
+        <div class="dogShowRightBox p-3">
+          飼い主：{{dog.user.username}}<br>
+          名前：{{dog.dogname}}<br>
+          年齢：{{dog.age}}<br>
+          性別：{{dog.sex}}<br>
+          紹介文：{{dog.introduction}}
+        </div>
+      </div>
     </div>
   </div>
+</div>
 {% endblock content %}
