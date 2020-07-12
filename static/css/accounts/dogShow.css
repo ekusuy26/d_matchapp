@@ -1,17 +1,5 @@
 .dogShowWrap{
   background-color: #fafafa;
-  /* display: flex;
-  justify-content: space-around;
-  height: 300px;
-  width: 80%;
-  margin: 0 auto;
-  padding: 30px 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto; */
 }
 
 .dogShowBox{
@@ -23,10 +11,7 @@
   width: 40%;
 }
 
-
 .dogShowImage{
-  /* display: block;
-  margin: 0 auto 20px; */
   border: solid 5px rgba(128,128,128,0.5);
   border-radius: 5px;
   height: 200px;
@@ -35,45 +20,6 @@
 }
 
 .dogShowNav{
-  /* 
-  margin: 10px;
-  text-align: left; */
   width: 60%;
   background-color: #fafafa;
-}
-
-.dogShowRightBox{
-}
-
-.dogShowLink {
-  /* background-color: red; */
-  /* display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #333333;
-  border: solid 2px #FFFC67;
-  border-radius: 100px;
-  transition: .4s;
-  font-size: larger; */
-}
-
-.dogShowLink:hover {
-  /* background: #FFFC67;
-  color: white; */
-}
-
-.dogShowFusionLink{
-  /* display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: #FF6788;
-  border: solid 2px #FF6788;
-  border-radius: 100px;
-  transition: .4s;
-  font-size: larger; */
-}
-
-.dogShowFusionLink:hover {
-  /* background: #FF6788;
-  color: white; */
 }
