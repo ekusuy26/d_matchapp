@@ -3,16 +3,14 @@
 <div class="breadcrumbWrap mx-auto w-75 px-5">
   <nav aria-label="パンくずリスト">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home">ホーム</i></li>
+      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}"><i class="fa fa-home">ホーム</i></a></li>
+      <li class="breadcrumb-item active" aria-current="page">合成画面</li>
     </ol>
   </nav>
 </div>
 <div class="mx-auto w-75 d-flex px-5">
   {% include "../shared/sideBar.html" %}
   <div class="fusionWrap">
-    <div class="headLine">
-      {{headLine}}
-    </div>
     <div class="fusionBox">
       <img class="fusionDogImage" src="{{ user.dog.image.url }}">&emsp;&emsp;&emsp;
       <img class="fusionDogImage" src="{{ opponent.image.url }}">

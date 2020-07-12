@@ -36,10 +36,8 @@ def index(request):
 
 def fusion(request, pk):
     opponent = Dog.objects.get(id = pk)
-    headLine = '合成してみる'
     return render(request, 'myhp/fusion.html', {
         'opponent': opponent,
-        'headLine': headLine,
     })
 
 def result(request, pk):
