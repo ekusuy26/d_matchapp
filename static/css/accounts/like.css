@@ -1,3 +1,7 @@
+.likeWrap{
+  min-height: calc(100% - 150px);
+}
+
 .likeLink{
   text-decoration: none;
   color: #333333;
