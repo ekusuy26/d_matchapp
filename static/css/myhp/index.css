@@ -26,6 +26,14 @@
   border-radius: 2px;
 }
 
+.indexRightBox{
+  height: calc(100% - 90px);
+}
+
+.headLine{
+  height: 30px;
+}
+
 .userBox {
   text-decoration: none;
   color: #333333;
