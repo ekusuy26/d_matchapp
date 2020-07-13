@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from accounts.models import Dog
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Document
 from PIL import Image
 import cv2
@@ -92,9 +92,18 @@ def result(request, pk):
 
 def display(request):
     all_objs = Document.objects.order_by('-id')
-    paginator = Paginator(all_objs, 10)
-    p = request.GET.get('p')
-    objs = paginator.get_page(p)
+    objs = paginate_queryset(request, all_objs, 10)
     return render(request, 'myhp/display.html', {
         'objs': objs,
     })
+
+def paginate_queryset(request, queryset, count):
+    paginator = Paginator(queryset, count)
+    page = request.GET.get('page')
+    try:
+        objs = paginator.page(page)
+    except PageNotAnInteger:
+        objs = paginator.page(1)
+    except EmptyPage:
+        objs = paginator.page(paginator.num_pages)
+    return objs
