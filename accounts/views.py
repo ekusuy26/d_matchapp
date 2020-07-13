@@ -11,6 +11,7 @@ from .models import Dog, Like
 from django.contrib.auth.models import Group, User
 from chats.models import Party
 from django.core.paginator import Paginator
+from myhp.views import paginate_queryset
 
 # Create your views here.
 
@@ -104,9 +105,7 @@ def like(request, pk):
 # いいねした相手
 def likedPerson(request):
     all_objs = Like.objects.filter(user_id=request.user.id)
-    paginator = Paginator(all_objs, 5)
-    p = request.GET.get('p')
-    objs = paginator.get_page(p)
+    objs = paginate_queryset(request, all_objs, 5)
     headLine = 'じぶんからのいいね！'
     return render(request, 'accounts/liked_person.html', {
         'objs': objs,
@@ -116,9 +115,7 @@ def likedPerson(request):
 # いいねされた相手
 def likedOpponent(request):
     all_objs = Like.objects.filter(dog_id=request.user.dog.id)
-    paginator = Paginator(all_objs, 5)
-    p = request.GET.get('p')
-    objs = paginator.get_page(p)
+    objs = paginate_queryset(request, all_objs, 5)
     headLine = 'あいてからのいいね！'
     return render(request, 'accounts/liked_opponent.html', {
         'objs': objs,
