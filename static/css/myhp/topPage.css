@@ -1,64 +1,47 @@
 /* topimage */
 .topImageWrap{
+  background-image: url("/static/images/top-image.jpg");
+  background-color:rgba(255,255,255,0.6);
+  background-blend-mode:lighten;
+  background-size: contain;
+  background-position: right;
+  background-repeat:no-repeat;
   height: 650px;
+  margin-top: 100px;
+  /* 
   display: flex;
   padding: 0 50px;
-  margin-top: 100px;
-}
-
-.topImageLeft{
-  background-color: #fafafa;
-  text-align: center;
-  padding: 30px;
-  width: 30%;
+  */
 }
 
 .topImageMessage{
-  margin: 50px 0;
-  height: 70%;
-}
-
-.topImageRight{
-  opacity: 0.5;
-  background-blend-mode:lighten;
-  background-size: cover;
-  width: 70%;
-  display: block;
-}
-
-/* howToUse */
-.topHowToUseWrap{
-  padding: 10px 50px;
-}
-.topHowToUseBox{
   background-color: #fafafa;
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.topHowToUse{
-  width: 250px;
-  margin: 50px 0;
-  opacity : 0;
-  transform: translateY(20px);
-  transition: 2s;
+  border: solid 1px rgba(128,128,128,0.5);
+  width: 30%;
+  /* margin: 50px 0;
+  height: 70%; */
 }
 
 .topHowToUsePhoto{
   width: 100%;
-  height: 250px;
-}
-
-.topHowToUsetext{
-  background-color: #fafafa;
   height: 200px;
 }
 
-.topHowToUseHeadline{
-  color: #00ECFF;
-  font-size: 16px;
+.topHowToUsetext{
+  background-color: #ffffff;
+  height: 200px;
+}
+
+.topHowToUseWrap{
+  background-color: #fafafa;
+}
+
+.topHowToUse{
+  border: solid 1px rgba(128,128,128,0.5);
+  margin: 0 25px;
+  opacity : 0;
+  transform: translateY(20px);
+  transition: 2s;
 }
 
 .topHowToUseNo{
@@ -72,8 +55,46 @@
   display: inline-block;
 }
 
+.topHowToUseHeadline{
+  color: #00ECFF;
+  font-size: 16px;
+}
+/* 
+
+.topImageLeft{
+  background-color: #fafafa;
+  text-align: center;
+  padding: 30px;
+  width: 30%;
+}
+
+
+.topImageRight{
+  opacity: 0.5;
+  background-blend-mode:lighten;
+  background-size: cover;
+  width: 70%;
+  display: block;
+} */
+
+/* howToUse */
+  /* 
+.topHowToUseBox{
+  background-color: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+ */
+
 /* userlist */
-.toppage-user-wrap{
+/* .toppage-user-wrap{
   padding: 0 50px 10px;
 }
 
@@ -118,4 +139,4 @@
   width: 150px;
   height: 50px;
   margin-top: 5px;
-}
+} */
