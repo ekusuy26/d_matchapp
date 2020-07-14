@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="topHowToUseWrap py-5">
+  <div class="topHowToUseWrap mb-3 py-5">
     <ul class="topHowToUseBox d-flex justify-content-center">
       <li class="topHowToUse col-lg-2 p-0">
         <img class="topHowToUsePhoto" src="/static/images/howto1.jpg">
@@ -51,25 +51,22 @@
     </ul>
   </div>
 
-  <div class="toppage-user-wrap">
+  <div class="toppageUserWrap text-center py-5">
     <div class="toppage-user-head">新着のお相手</div>
-    <div class="toppage-users d-flex">
+    <ul class="list-group list-group-horizontal justify-content-center my-3">
       {% for dog in objs %}
-      <a href="#" class="toppage-user-link d-block">
-        <div class="toppage-user">
-          <img class="toppage-user-photo" src="{{ dog.image.url }}">
-          <div class="toppage-user-explanation">
-            <div class="" style="text-align: center;">なまえ：{{ dog.dogname }}</div>
-            <div class="" style="display: flex; justify-content: space-around;">
-              <div class="">{{ dog.sex }}</div>
-              <div class="">{{ dog.age }}さい</div>
-            </div>
-          </div>
-        </div>
-      </a>
+      <li class="toppage-user list-group-item col-lg-2 mx-1">
+        <a href="#" class="toppage-user-link d-block">
+          <img class="toppageUserPhoto" src="{{ dog.image.url }}">
+          <p class="">なまえ：{{ dog.dogname }}<br>
+            {{ dog.sex }}&emsp;&emsp;
+            {{ dog.age }}さい
+          </p>
+        </a>
+      </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
-  {% include "../shared/footer.html" %}
-  {% endblock content %}
 </div>
+{% include "../shared/footer.html" %}
+{% endblock content %}
