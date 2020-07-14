@@ -53,9 +53,9 @@
 
   <div class="toppage-user-wrap">
     <div class="toppage-user-head">新着のお相手</div>
-    <div class="toppage-users">
+    <div class="toppage-users d-flex">
       {% for dog in objs %}
-      <a href="#" class="toppage-user-link">
+      <a href="#" class="toppage-user-link d-block">
         <div class="toppage-user">
           <img class="toppage-user-photo" src="{{ dog.image.url }}">
           <div class="toppage-user-explanation">
