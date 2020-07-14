@@ -1,12 +1,12 @@
 {% extends '../shared/base.html' %}
 {% block content %}
 
-<div class="main col-lg-3 mx-auto text-center" style="background-color: red; margin-top: 100px; min-height: 500px;">
+<div class="dogNewWrap col-lg-3 mx-auto text-center">
   <div class="dog-registration">
     <form id="new_dog" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form-group-img">
-        <label class="newDogLabel">image</label>
+        <label class="DogLabel">image</label>
         <div class="userImgPreview" id="userImgPreview">
           <img id="thumbnail" class="userImgPreview_content" accept="image/*" src="">
         </div>
@@ -28,7 +28,7 @@
         <label class="newDogLabel">introduction</label>
         {{ form.introduction }}
       </div>
-      <button type="submit" class="dogBtn">Registration</button>
+      <button type="submit" class="dogBtn">登録する</button>
     </form>
   </div>
 </div>

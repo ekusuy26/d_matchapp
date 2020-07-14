@@ -1,0 +1,14 @@
+.dogNewWrap{
+  margin-top: 100px;
+  min-height: 600px;
+  background-color: #fafafa;
+}
+
+.newDogLabel{
+  width: 20%;
+  text-align: right;
+}
+
+#id_introduction{
+  height: 150px;
+}
