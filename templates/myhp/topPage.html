@@ -2,12 +2,16 @@
 {% block content %}
 <div class="mx-auto w-75 px-5">
   <div class="topImageWrap mb-3">
-    <div class="topImageMessage h-100 p-5">
-      D.matchAppはわんちゃんのための<br>マッチングアプリです。<br>
-      子犬は両親の血統によって<br>様々な容姿の子が生まれます。<br>
-      マッチング前にイメージを確認して<br>わんちゃんに理想のお相手を<br>見つけてあげましょう。
-      <a class="d-block btn btn-outline-primary rounded-pill align-middle mt-5" href="{% url 'accounts:login' %}">ログインする</a>
-    </div>
+      <div class="topImageMessage h-100 p-5">
+        <div class="h-75 d-flex align-items-center justify-content-center">
+          D.matchAppはわんちゃんのための<br>マッチングアプリです。<br>
+          子犬は両親の血統によって<br>様々な容姿の子が生まれます。<br>
+          マッチング前にイメージを確認して<br>わんちゃんに理想のお相手を<br>見つけてあげましょう。
+        </div>
+        <div class="text-center">
+          <a class="btn btn-outline-primary rounded-pill align-middle mt-5" href="{% url 'accounts:login' %}">ログインする</a>
+        </div>
+      </div>
   </div>
 
   <div class="topHowToUseWrap mb-3 py-5">
