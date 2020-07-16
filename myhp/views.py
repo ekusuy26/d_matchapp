@@ -19,7 +19,7 @@ def topPage(request):
 
 def index(request):
     headLine = 'ユーザー一覧'
-    all_objs = Dog.objects.order_by('-id')
+    all_objs = Dog.objects.order_by('-id').exclude(user_id=request.user.dog.id)
     objs = paginate_queryset(request, all_objs, 12)
     dog = Dog.objects.filter(user_id=request.user.id)
     if dog.count() == 0:
