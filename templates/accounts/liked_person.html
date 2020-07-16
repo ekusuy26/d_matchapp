@@ -1,20 +1,5 @@
 {% extends './like.html' %}
 {% block like %}
-
-
-
-{% for t in test %}
-{{t}}
-<!-- {{t.users.all}} -->
-{% endfor %}
-
-{% for k in kari %}
-{{k}}
-<!-- {{t.users.all}} -->
-{% endfor %}
-
-
-
 {% for obj in objs %}
 <div class="likeBox mx-auto col-9 my-5 p-0">
   <a href="{% url 'accounts:dogShow' pk=obj.dog.id %}" class="likeLink d-flex">
