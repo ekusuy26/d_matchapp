@@ -1,0 +1,34 @@
+version: '3'
+
+volumes:
+  db-data:
+
+services: 
+  web:
+    build: .
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/mounted_folder'
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    container_name: django-docker-db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: d_matchapp
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ''
+      MYSQL_ALLOW_EMPTY_PASSWORD: ‘yes’
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - 'db-data:/var/lib/mysql'
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - '3306:3306'
