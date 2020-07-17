@@ -1,5 +1,0 @@
-Django==2.1.7
-mysqlclient==1.4.6
-Pillow==7.0.0
-opencv-python==4.2.0.32
-django-bootstrap4==2.2.0

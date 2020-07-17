@@ -10,3 +10,4 @@ settings.py
 /media
 /work
 /db.sqlite3
+/requirements.txt
