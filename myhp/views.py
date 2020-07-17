@@ -46,10 +46,13 @@ def result(request, pk):
     myself = Dog.objects.get(user_id = request.user.id)
     opponent = Dog.objects.get(id = pk)
 
-    max_id = Document.objects.latest('id').id
+    try:
+        max_id = Document.objects.latest('id').id
+    except:
+        max_id = 0
     docment_tbl = Document()
-    docment_tbl.first_image = "results/output" + str(max_id) + ".jpg"
-    docment_tbl.second_image = "results/output_two" + str(max_id) + ".jpg"
+    docment_tbl.first_image = "results/output" + str(max_id + 1) + ".jpg"
+    docment_tbl.second_image = "results/output_two" + str(max_id + 1) + ".jpg"
     docment_tbl.save()
     new_document = Document.objects.latest('id')
     new_document.users.add(request.user)
@@ -57,8 +60,8 @@ def result(request, pk):
 
     input_path = settings.BASE_DIR + myself.image.url
     input_path_two = settings.BASE_DIR + opponent.image.url
-    output_path = settings.BASE_DIR + "/media/results/output" + str(max_id) + ".jpg"
-    output_path_two = settings.BASE_DIR + "/media/results/output_two" + str(max_id) + ".jpg"
+    output_path = settings.BASE_DIR + "/media/results/output" + str(max_id + 1) + ".jpg"
+    output_path_two = settings.BASE_DIR + "/media/results/output_two" + str(max_id + 1) + ".jpg"
     src = cv2.imread(input_path)
     src_two = cv2.imread(input_path_two)
     img = src.copy()

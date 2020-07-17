@@ -104,6 +104,7 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
+    all_objs = Like.objects.filter(user_id=request.user.id).exclude()
     objs = paginate_queryset(request, all_objs, 5)
     # 試行錯誤中
     # test = Party.objects.filter(users=request.user.id)
@@ -112,13 +113,10 @@ def likedPerson(request):
     #     for i in t.users.all():
     #         if i.id != request.user.id:
     #             kari.append(i.id)
-    all_objs = Like.objects.filter(user_id=request.user.id).exclude()
     headLine = 'じぶんからのいいね！'
     return render(request, 'accounts/liked_person.html', {
         'objs': objs,
         'headLine': headLine,
-        'test': test,
-        'kari': kari,
     })
 
 # いいねされた相手
