@@ -2,6 +2,7 @@ from django.shortcuts import render, loader, redirect
 from django.http import HttpResponse
 from chats.models import Party, Chat
 from .forms import ChatForm
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -34,3 +35,11 @@ def show(request, id):
         'parties' : parties,
     }
     return HttpResponse(template.render(context, request))
+
+def ajax_post_add(request):
+    title = request.POST.get('text')
+    post = Chat.objects.create(text=title)
+    d = {
+        'title': post.text,
+    }
+    return JsonResponse(d)
