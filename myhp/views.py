@@ -18,7 +18,6 @@ def topPage(request):
         })
 
 def index(request):
-    headLine = 'ユーザー一覧'
     try:
         all_objs = Dog.objects.order_by('-id').exclude(user_id=request.user.id)
     except:
@@ -30,7 +29,6 @@ def index(request):
     else:
         dog_flg = 1
     return render(request, 'myhp/index.html', {
-        'headLine': headLine,
         'objs': objs,
         'dog_flg': dog_flg,
     })
