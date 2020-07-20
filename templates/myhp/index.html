@@ -3,7 +3,8 @@
 <div class="breadcrumbWrap mx-auto w-75 px-5">
   <nav aria-label="パンくずリスト">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page"><i class="fa fa-home">ホーム</i></li>
+      <li class="breadcrumb-item"><a href="{% url 'myhp:topPage' %}"><i class="fa fa-home">ホーム</i></a></li>
+      <li class="breadcrumb-item active" aria-current="page">ユーザー一覧</li>
     </ol>
   </nav>
 </div>
@@ -11,9 +12,6 @@
   {% if user.is_authenticated %}
   {% include "../shared/sideBar.html" %}
   <div class="wrapRight col-lg-9 pt-4">
-    <div class="headLine w-25 mx-auto text-center">
-      {{headLine}}
-    </div>
     <div class="indexRightBox py-5">
       {% for obj in objs %}
       <a href="{% url 'accounts:dogShow' pk=obj.id %}" class="userBox col-lg-3 text-center d-block">
