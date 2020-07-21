@@ -23,11 +23,7 @@ def index(request):
     except:
         all_objs = Dog.objects.order_by('-id')
     objs = paginate_queryset(request, all_objs, 12)
-    dog = Dog.objects.filter(user_id=request.user.id)
-    if dog.count() == 0:
-        dog_flg = 0
-    else:
-        dog_flg = 1
+    dog_flg = is_dog_registed(request)
     return render(request, 'myhp/index.html', {
         'objs': objs,
         'dog_flg': dog_flg,
@@ -109,3 +105,11 @@ def paginate_queryset(request, queryset, count):
     except EmptyPage:
         objs = paginator.page(paginator.num_pages)
     return objs
+
+def is_dog_registed(request):
+    dog = Dog.objects.filter(user_id=request.user.id)
+    if dog.count() == 0:
+        dog_flg = 0
+    else:
+        dog_flg = 1
+    return dog_flg
