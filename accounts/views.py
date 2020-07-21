@@ -11,7 +11,7 @@ from .models import Dog, Like
 from django.contrib.auth.models import Group, User
 from chats.models import Party
 from django.core.paginator import Paginator
-from myhp.views import paginate_queryset
+from myhp.views import paginate_queryset, is_dog_registed
 
 # Create your views here.
 
@@ -57,6 +57,7 @@ def dogDelete(request, pk):
     return redirect('myhp:index')
 
 def dogShow(request, pk):
+    dog_flg = is_dog_registed(request)
     dog = Dog.objects.get(id = pk)
     query = Like.objects.filter(user_id=request.user.id, dog_id=pk)
     if query.count() == 0:
@@ -65,6 +66,7 @@ def dogShow(request, pk):
         like_flg = 1
     return render(request, 'accounts/dogShow.html', {
         'dog': dog,
+        'dog_flg': dog_flg,
         'like_flg': like_flg,
         })
 
