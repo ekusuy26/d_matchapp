@@ -106,20 +106,28 @@ def like(request, pk):
 
 # いいねした相手
 def likedPerson(request):
-    all_objs = Like.objects.filter(user_id=request.user.id).exclude()
-    objs = paginate_queryset(request, all_objs, 5)
-    # 試行錯誤中
-    # test = Party.objects.filter(users=request.user.id)
-    # kari = []
-    # for t in test:
-    #     for i in t.users.all():
-    #         if i.id != request.user.id:
-    #             kari.append(i.id)
     headLine = 'じぶんからのいいね！'
-    return render(request, 'accounts/liked_person.html', {
-        'objs': objs,
-        'headLine': headLine,
-    })
+    dog_flg = is_dog_registed(request)
+    if dog_flg == 1:
+        all_objs = Like.objects.filter(user_id=request.user.id).exclude()
+        objs = paginate_queryset(request, all_objs, 5)
+        # 試行錯誤中
+        # test = Party.objects.filter(users=request.user.id)
+        # kari = []
+        # for t in test:
+        #     for i in t.users.all():
+        #         if i.id != request.user.id:
+        #             kari.append(i.id)
+        return render(request, 'accounts/liked_person.html', {
+            'dog_flg': dog_flg,
+            'objs': objs,
+            'headLine': headLine,
+        })
+    else:
+        return render(request, 'accounts/liked_person.html', {
+            'dog_flg': dog_flg,
+            'headLine': headLine,
+        })
 
 # いいねされた相手
 def likedOpponent(request):
