@@ -123,10 +123,18 @@ def likedPerson(request):
 
 # いいねされた相手
 def likedOpponent(request):
-    all_objs = Like.objects.filter(dog_id=request.user.dog.id)
-    objs = paginate_queryset(request, all_objs, 5)
     headLine = 'あいてからのいいね！'
-    return render(request, 'accounts/liked_opponent.html', {
-        'objs': objs,
-        'headLine': headLine,
-    })
+    dog_flg = is_dog_registed(request)
+    if dog_flg == 1:
+        all_objs = Like.objects.filter(dog_id=request.user.dog.id)
+        objs = paginate_queryset(request, all_objs, 5)
+        return render(request, 'accounts/liked_opponent.html', {
+            'dog_flg': dog_flg,
+            'objs': objs,
+            'headLine': headLine,
+        })
+    else:
+        return render(request, 'accounts/liked_opponent.html', {
+            'dog_flg': dog_flg,
+            'headLine': headLine,
+        })
