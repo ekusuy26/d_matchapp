@@ -89,9 +89,11 @@ def result(request, pk):
     })
 
 def display(request):
+    dog_flg = is_dog_registed(request)
     all_objs = Document.objects.order_by('-id')
     objs = paginate_queryset(request, all_objs, 10)
     return render(request, 'myhp/display.html', {
+        'dog_flg': dog_flg,
         'objs': objs,
     })
 
