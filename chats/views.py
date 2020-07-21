@@ -3,13 +3,16 @@ from django.http import HttpResponse
 from chats.models import Party, Chat
 from .forms import ChatForm
 from django.http import JsonResponse
+from myhp.views import is_dog_registed
 
 # Create your views here.
 
 def index(request):
+    dog_flg = is_dog_registed(request)
     parties = Party.objects.filter(users=request.user.id)
     return render(request, 'chats/index.html', {
-        'parties' : parties
+        'parties' : parties,
+        'dog_flg' : dog_flg
         })
 
 def show(request, id):
